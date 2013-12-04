@@ -1,0 +1,1600 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
+    "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+<meta http-equiv="Content-Type" content="application/xhtml+xml; charset=UTF-8" />
+<meta name="generator" content="AsciiDoc 8.6.4" />
+<title>Telephones, Mechanical Turks, and the Future of APIs</title>
+<style type="text/css">
+/* Sans-serif font. */
+h1, h2, h3, h4, h5, h6,
+div.title, caption.title,
+thead, p.table.header,
+div#toctitle,
+span#author, span#revnumber, span#revdate, span#revremark,
+div#footer {
+  font-family: Arial,Helvetica,sans-serif;
+}
+
+/* Serif font. */
+div.sectionbody {
+  font-family: Georgia,"Times New Roman",Times,serif;
+}
+
+/* Monospace font. */
+tt {
+  font-size: inherit;
+}
+
+body {
+  margin: 1em 5% 1em 5%;
+}
+
+a {
+  color: blue;
+  text-decoration: underline;
+}
+a:visited {
+  color: fuchsia;
+}
+
+em {
+  font-style: italic;
+  color: navy;
+}
+
+strong {
+  font-weight: bold;
+  color: #083194;
+}
+
+tt {
+  font-size: inherit;
+  color: navy;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: #527bbd;
+  margin-top: 1.2em;
+  margin-bottom: 0.5em;
+  line-height: 1.3;
+}
+
+h1, h2, h3 {
+  border-bottom: 2px solid silver;
+}
+h2 {
+  padding-top: 0.5em;
+}
+h3 {
+  float: left;
+}
+h3 + * {
+  clear: left;
+}
+
+div.sectionbody {
+  margin-left: 0;
+}
+
+hr {
+  border: 1px solid silver;
+}
+
+p {
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+}
+
+ul, ol, li > p {
+  margin-top: 0;
+}
+ul > li     { color: #aaa; }
+ul > li > * { color: black; }
+
+pre {
+  padding: 0;
+  margin: 0;
+}
+
+span#author {
+  color: #527bbd;
+  font-weight: bold;
+  font-size: 1.1em;
+}
+span#email {
+}
+span#revnumber, span#revdate, span#revremark {
+}
+
+div#footer {
+  font-size: small;
+  border-top: 2px solid silver;
+  padding-top: 0.5em;
+  margin-top: 4.0em;
+}
+div#footer-text {
+  float: left;
+  padding-bottom: 0.5em;
+}
+div#footer-badges {
+  float: right;
+  padding-bottom: 0.5em;
+}
+
+div#preamble {
+  margin-top: 1.5em;
+  margin-bottom: 1.5em;
+}
+div.tableblock, div.imageblock, div.exampleblock, div.verseblock,
+div.quoteblock, div.literalblock, div.listingblock, div.sidebarblock,
+div.admonitionblock {
+  margin-top: 1.0em;
+  margin-bottom: 1.5em;
+}
+div.admonitionblock {
+  margin-top: 2.0em;
+  margin-bottom: 2.0em;
+  margin-right: 10%;
+  color: #606060;
+}
+
+div.content { /* Block element content. */
+  padding: 0;
+}
+
+/* Block element titles. */
+div.title, caption.title {
+  color: #527bbd;
+  font-weight: bold;
+  text-align: left;
+  margin-top: 1.0em;
+  margin-bottom: 0.5em;
+}
+div.title + * {
+  margin-top: 0;
+}
+
+td div.title:first-child {
+  margin-top: 0.0em;
+}
+div.content div.title:first-child {
+  margin-top: 0.0em;
+}
+div.content + div.title {
+  margin-top: 0.0em;
+}
+
+div.sidebarblock > div.content {
+  background: #ffffee;
+  border: 1px solid #dddddd;
+  border-left: 4px solid #f0f0f0;
+  padding: 0.5em;
+}
+
+div.listingblock > div.content {
+  border: 1px solid #dddddd;
+  border-left: 5px solid #f0f0f0;
+  background: #f8f8f8;
+  padding: 0.5em;
+}
+
+div.quoteblock, div.verseblock {
+  padding-left: 1.0em;
+  margin-left: 1.0em;
+  margin-right: 10%;
+  border-left: 5px solid #f0f0f0;
+  color: #777777;
+}
+
+div.quoteblock > div.attribution {
+  padding-top: 0.5em;
+  text-align: right;
+}
+
+div.verseblock > pre.content {
+  font-family: inherit;
+  font-size: inherit;
+}
+div.verseblock > div.attribution {
+  padding-top: 0.75em;
+  text-align: left;
+}
+/* DEPRECATED: Pre version 8.2.7 verse style literal block. */
+div.verseblock + div.attribution {
+  text-align: left;
+}
+
+div.admonitionblock .icon {
+  vertical-align: top;
+  font-size: 1.1em;
+  font-weight: bold;
+  text-decoration: underline;
+  color: #527bbd;
+  padding-right: 0.5em;
+}
+div.admonitionblock td.content {
+  padding-left: 0.5em;
+  border-left: 3px solid #dddddd;
+}
+
+div.exampleblock > div.content {
+  border-left: 3px solid #dddddd;
+  padding-left: 0.5em;
+}
+
+div.imageblock div.content { padding-left: 0; }
+span.image img { border-style: none; }
+a.image:visited { color: white; }
+
+dl {
+  margin-top: 0.8em;
+  margin-bottom: 0.8em;
+}
+dt {
+  margin-top: 0.5em;
+  margin-bottom: 0;
+  font-style: normal;
+  color: navy;
+}
+dd > *:first-child {
+  margin-top: 0.1em;
+}
+
+ul, ol {
+    list-style-position: outside;
+}
+ol.arabic {
+  list-style-type: decimal;
+}
+ol.loweralpha {
+  list-style-type: lower-alpha;
+}
+ol.upperalpha {
+  list-style-type: upper-alpha;
+}
+ol.lowerroman {
+  list-style-type: lower-roman;
+}
+ol.upperroman {
+  list-style-type: upper-roman;
+}
+
+div.compact ul, div.compact ol,
+div.compact p, div.compact p,
+div.compact div, div.compact div {
+  margin-top: 0.1em;
+  margin-bottom: 0.1em;
+}
+
+div.tableblock > table {
+  border: 3px solid #527bbd;
+}
+thead, p.table.header {
+  font-weight: bold;
+  color: #527bbd;
+}
+tfoot {
+  font-weight: bold;
+}
+td > div.verse {
+  white-space: pre;
+}
+p.table {
+  margin-top: 0;
+}
+/* Because the table frame attribute is overriden by CSS in most browsers. */
+div.tableblock > table[frame="void"] {
+  border-style: none;
+}
+div.tableblock > table[frame="hsides"] {
+  border-left-style: none;
+  border-right-style: none;
+}
+div.tableblock > table[frame="vsides"] {
+  border-top-style: none;
+  border-bottom-style: none;
+}
+
+
+div.hdlist {
+  margin-top: 0.8em;
+  margin-bottom: 0.8em;
+}
+div.hdlist tr {
+  padding-bottom: 15px;
+}
+dt.hdlist1.strong, td.hdlist1.strong {
+  font-weight: bold;
+}
+td.hdlist1 {
+  vertical-align: top;
+  font-style: normal;
+  padding-right: 0.8em;
+  color: navy;
+}
+td.hdlist2 {
+  vertical-align: top;
+}
+div.hdlist.compact tr {
+  margin: 0;
+  padding-bottom: 0;
+}
+
+.comment {
+  background: yellow;
+}
+
+.footnote, .footnoteref {
+  font-size: 0.8em;
+}
+
+span.footnote, span.footnoteref {
+  vertical-align: super;
+}
+
+#footnotes {
+  margin: 20px 0 20px 0;
+  padding: 7px 0 0 0;
+}
+
+#footnotes div.footnote {
+  margin: 0 0 5px 0;
+}
+
+#footnotes hr {
+  border: none;
+  border-top: 1px solid silver;
+  height: 1px;
+  text-align: left;
+  margin-left: 0;
+  width: 20%;
+  min-width: 100px;
+}
+
+div.colist td {
+  padding-right: 0.5em;
+  padding-bottom: 0.3em;
+  vertical-align: top;
+}
+div.colist td img {
+  margin-top: 0.3em;
+}
+
+@media print {
+  div#footer-badges { display: none; }
+}
+
+div#toc {
+  margin-bottom: 2.5em;
+}
+
+div#toctitle {
+  color: #527bbd;
+  font-size: 1.1em;
+  font-weight: bold;
+  margin-top: 1.0em;
+  margin-bottom: 0.1em;
+}
+
+div.toclevel1, div.toclevel2, div.toclevel3, div.toclevel4 {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+div.toclevel2 {
+  margin-left: 2em;
+  font-size: 0.9em;
+}
+div.toclevel3 {
+  margin-left: 4em;
+  font-size: 0.9em;
+}
+div.toclevel4 {
+  margin-left: 6em;
+  font-size: 0.9em;
+}
+
+span.aqua { color: aqua; }
+span.black { color: black; }
+span.blue { color: blue; }
+span.fuchsia { color: fuchsia; }
+span.gray { color: gray; }
+span.green { color: green; }
+span.lime { color: lime; }
+span.maroon { color: maroon; }
+span.navy { color: navy; }
+span.olive { color: olive; }
+span.purple { color: purple; }
+span.red { color: red; }
+span.silver { color: silver; }
+span.teal { color: teal; }
+span.white { color: white; }
+span.yellow { color: yellow; }
+
+span.aqua-background { background: aqua; }
+span.black-background { background: black; }
+span.blue-background { background: blue; }
+span.fuchsia-background { background: fuchsia; }
+span.gray-background { background: gray; }
+span.green-background { background: green; }
+span.lime-background { background: lime; }
+span.maroon-background { background: maroon; }
+span.navy-background { background: navy; }
+span.olive-background { background: olive; }
+span.purple-background { background: purple; }
+span.red-background { background: red; }
+span.silver-background { background: silver; }
+span.teal-background { background: teal; }
+span.white-background { background: white; }
+span.yellow-background { background: yellow; }
+
+span.big { font-size: 2em; }
+span.small { font-size: 0.6em; }
+</style>
+<script type="text/javascript">
+/*<![CDATA[*/
+window.onload = function(){asciidoc.footnotes();}
+var asciidoc = {  // Namespace.
+
+/////////////////////////////////////////////////////////////////////
+// Table Of Contents generator
+/////////////////////////////////////////////////////////////////////
+
+/* Author: Mihai Bazon, September 2002
+ * http://students.infoiasi.ro/~mishoo
+ *
+ * Table Of Content generator
+ * Version: 0.4
+ *
+ * Feel free to use this script under the terms of the GNU General Public
+ * License, as long as you do not remove or alter this notice.
+ */
+
+ /* modified by Troy D. Hanson, September 2006. License: GPL */
+ /* modified by Stuart Rackham, 2006, 2009. License: GPL */
+
+// toclevels = 1..4.
+toc: function (toclevels) {
+
+  function getText(el) {
+    var text = "";
+    for (var i = el.firstChild; i != null; i = i.nextSibling) {
+      if (i.nodeType == 3 /* Node.TEXT_NODE */) // IE doesn't speak constants.
+        text += i.data;
+      else if (i.firstChild != null)
+        text += getText(i);
+    }
+    return text;
+  }
+
+  function TocEntry(el, text, toclevel) {
+    this.element = el;
+    this.text = text;
+    this.toclevel = toclevel;
+  }
+
+  function tocEntries(el, toclevels) {
+    var result = new Array;
+    var re = new RegExp('[hH]([2-'+(toclevels+1)+'])');
+    // Function that scans the DOM tree for header elements (the DOM2
+    // nodeIterator API would be a better technique but not supported by all
+    // browsers).
+    var iterate = function (el) {
+      for (var i = el.firstChild; i != null; i = i.nextSibling) {
+        if (i.nodeType == 1 /* Node.ELEMENT_NODE */) {
+          var mo = re.exec(i.tagName);
+          if (mo && (i.getAttribute("class") || i.getAttribute("className")) != "float") {
+            result[result.length] = new TocEntry(i, getText(i), mo[1]-1);
+          }
+          iterate(i);
+        }
+      }
+    }
+    iterate(el);
+    return result;
+  }
+
+  var toc = document.getElementById("toc");
+  var entries = tocEntries(document.getElementById("content"), toclevels);
+  for (var i = 0; i < entries.length; ++i) {
+    var entry = entries[i];
+    if (entry.element.id == "")
+      entry.element.id = "_toc_" + i;
+    var a = document.createElement("a");
+    a.href = "#" + entry.element.id;
+    a.appendChild(document.createTextNode(entry.text));
+    var div = document.createElement("div");
+    div.appendChild(a);
+    div.className = "toclevel" + entry.toclevel;
+    toc.appendChild(div);
+  }
+  if (entries.length == 0)
+    toc.parentNode.removeChild(toc);
+},
+
+
+/////////////////////////////////////////////////////////////////////
+// Footnotes generator
+/////////////////////////////////////////////////////////////////////
+
+/* Based on footnote generation code from:
+ * http://www.brandspankingnew.net/archive/2005/07/format_footnote.html
+ */
+
+footnotes: function () {
+  var cont = document.getElementById("content");
+  var noteholder = document.getElementById("footnotes");
+  var spans = cont.getElementsByTagName("span");
+  var refs = {};
+  var n = 0;
+  for (i=0; i<spans.length; i++) {
+    if (spans[i].className == "footnote") {
+      n++;
+      // Use [\s\S] in place of . so multi-line matches work.
+      // Because JavaScript has no s (dotall) regex flag.
+      note = spans[i].innerHTML.match(/\s*\[([\s\S]*)]\s*/)[1];
+      noteholder.innerHTML +=
+        "<div class='footnote' id='_footnote_" + n + "'>" +
+        "<a href='#_footnoteref_" + n + "' title='Return to text'>" +
+        n + "</a>. " + note + "</div>";
+      spans[i].innerHTML =
+        "[<a id='_footnoteref_" + n + "' href='#_footnote_" + n +
+        "' title='View footnote' class='footnote'>" + n + "</a>]";
+      var id =spans[i].getAttribute("id");
+      if (id != null) refs["#"+id] = n;
+    }
+  }
+  if (n == 0)
+    noteholder.parentNode.removeChild(noteholder);
+  else {
+    // Process footnoterefs.
+    for (i=0; i<spans.length; i++) {
+      if (spans[i].className == "footnoteref") {
+        var href = spans[i].getElementsByTagName("a")[0].getAttribute("href");
+        href = href.match(/#.*/)[0];  // Because IE return full URL.
+        n = refs[href];
+        spans[i].innerHTML =
+          "[<a href='#_footnote_" + n +
+          "' title='View footnote' class='footnote'>" + n + "</a>]";
+      }
+    }
+  }
+}
+
+}
+/*]]>*/
+</script>
+</head>
+<body class="article">
+<div id="header">
+<h1>Telephones, Mechanical Turks, and the Future of APIs</h1>
+<span id="author">Mike Amundsen, Principal API Architect for Layer 7 / CA</span><br />
+<span id="email"><tt>&lt;<a href="mailto:mca@amundsen.com">mca@amundsen.com</a>&gt;</tt></span><br />
+</div>
+<div id="content">
+<div id="preamble">
+<div class="sectionbody">
+<div class="sidebarblock">
+<div class="content">
+<div class="title">Title Slide</div>
+<div class="paragraph"><p><em>Something that captures the topic. Maybe a telephone switchboard, mechanical turk, and something
+that represents the future of APIs, computer programming, etc.</em></p></div>
+<div class="paragraph"><p><em>Also include the following at the bottom of the slide:</em></p></div>
+<div class="paragraph"><p>Mike Amundsen,</p></div>
+<div class="paragraph"><p>Principal API Architect for CA / Layer 7</p></div>
+<div class="paragraph"><p>@mamund</p></div>
+</div></div>
+<div class="sidebarblock">
+<div class="content">
+<div class="title"><em><span class="red">Time: 00</span></em></div>
+</div></div>
+<div class="paragraph"><p>I&#8217;d like to talk to you today about the Future of APIs - our future.</p></div>
+<div class="sidebarblock">
+<div class="content">
+<div class="title">Slide Future</div>
+<div class="paragraph"><p><em>some futuristic image (maybe retro-future images like we&#8217;d see in the 1940s or 50s)</em></p></div>
+<div class="ulist"><ul>
+<li>
+<p>
+<a href="http://blog.stuttgarter-zeitung.de/wp-content/spaceport-of-the-future-1957.jpg">http://blog.stuttgarter-zeitung.de/wp-content/spaceport-of-the-future-1957.jpg</a>
+</p>
+</li>
+<li>
+<p>
+<a href="http://blog.stuttgarter-zeitung.de/die-zukunft-von-gestern/2010/08/10/raumfahrt-im-abendrot/">http://blog.stuttgarter-zeitung.de/die-zukunft-von-gestern/2010/08/10/raumfahrt-im-abendrot/</a>
+</p>
+</li>
+</ul></div>
+</div></div>
+<div class="paragraph"><p>Most people, many of them here today, are quite optimistic about the future of APIs. And, I must admit,
+I, too, think we have an incredible opportunity before us; that the future offers amazing potential.</p></div>
+<div class="sidebarblock">
+<div class="content">
+<div class="title">Slide jetpack</div>
+<div class="paragraph"><p><em>a flying jetpack!</em></p></div>
+<div class="ulist"><ul>
+<li>
+<p>
+<a href="http://mattsko.files.wordpress.com/2012/01/future501.jpg">http://mattsko.files.wordpress.com/2012/01/future501.jpg</a>
+</p>
+</li>
+<li>
+<p>
+<a href="http://mattsko.wordpress.com/2012/01/23/">http://mattsko.wordpress.com/2012/01/23/</a>
+</p>
+</li>
+</ul></div>
+</div></div>
+<div class="paragraph"><p>Who knows, maybe I&#8217;ll finally get that jetpack that I was promised as a young member of the "Rocket Age!"</p></div>
+<div class="paragraph"><p>However, my optimism is tempered by frustration and disappointment. Why?</p></div>
+<div class="sidebarblock">
+<div class="content">
+<div class="title">Slide dystopia</div>
+<div class="paragraph"><p><em>Fritz Lang&#8217;s Metropolis?</em></p></div>
+</div></div>
+<div class="paragraph"><p>Because I am concerned that some of us
+are ignoring not just the lessons of the past, but also the likely mistakes of the future. I&#8217;m worried that
+we&#8217;re missing opportunities before us <em>today</em> that will help us mold and shape our shared tomorrows.</p></div>
+<div class="sidebarblock">
+<div class="content">
+<div class="title">Slide techGifts</div>
+<div class="paragraph"><p><em>not sure here. lots of inventions from the 20th century? (light bulb, telegraph, telephone, automobile, refrigerator, air conditioning, mainframe computer, satellite phone, PC/Mac, gameboy/cube, TV remote, tablet computer, etc.)</em></p></div>
+<div class="paragraph"><p>animate w/o clicks.</p></div>
+</div></div>
+<div class="paragraph"><p>I think we are too focused on the here-and-now and that we are too willing to lower our gaze from the far horizon and to look
+instead at the gifts around our feet. Forgetting that the technological gifts we have today are here due to the forward-thinking, risk-taking, and experimentation of those who came before us.</p></div>
+<div class="sidebarblock">
+<div class="content">
+<div class="title">Slide giants</div>
+<div class="paragraph"><p><em>include names w/ each portait:
+(Charles Babbage, Lady Lovelace, Samuel Morse, George Boole, Alexander Graham Bell, Alan Turing, Claude Shannon, Vanneavar Bush, Douglas Engelbart, Ted Nelson, Tim Berners-Lee, Roy T. Fielding)</em></p></div>
+<div class="paragraph"><p>animate w/o clicks.</p></div>
+</div></div>
+<div class="paragraph"><p>I fear that we sometines forget that we are not actually as tall as we think we are. That, in fact, our expansive view is the result of our standing on the shoulders of the giants who came before us.</p></div>
+<div class="paragraph"><p>In short, I think we&#8217;re squandering our future.</p></div>
+<div class="sidebarblock">
+<div class="content">
+<div class="title">Slide squander</div>
+<div class="paragraph"><p><em>some image of abandoned town, etc.</em></p></div>
+<div class="ulist"><ul>
+<li>
+<p>
+<a href="http://www.gotoast.ca/blog/wp-content/uploads/2008/10/22-san-zhi-abandoned-village1.jpg">http://www.gotoast.ca/blog/wp-content/uploads/2008/10/22-san-zhi-abandoned-village1.jpg</a>
+</p>
+</li>
+<li>
+<p>
+<a href="http://forum.nationstates.net/viewtopic.php?f=23&amp;t=237475">http://forum.nationstates.net/viewtopic.php?f=23&amp;t=237475</a>
+</p>
+</li>
+</ul></div>
+</div></div>
+<div class="paragraph"><p>So I want to talk about that future. Now.</p></div>
+<div class="sidebarblock">
+<div class="content">
+<div class="title">Slide futureNow</div>
+<div class="paragraph"><p><em>some whimsical image of the future (again, from the 1950s POV)</em></p></div>
+<div class="ulist"><ul>
+<li>
+<p>
+<a href="http://peterlarson.org/wp-content/uploads/3949834600_0a7487f402_b1.jpg">http://peterlarson.org/wp-content/uploads/3949834600_0a7487f402_b1.jpg</a>
+</p>
+</li>
+<li>
+<p>
+<a href="http://peterlarson.org/blue-futures/">http://peterlarson.org/blue-futures/</a>
+</p>
+</li>
+</ul></div>
+</div></div>
+<div class="paragraph"><p>In hopes of encouraging us to look up, look ahead, and start to create that future today. And, in order to do that,
+I want to reach back into the past. Because I think the past can inform us, remind us, and help us to craft a better tomorrow.</p></div>
+<div class="paragraph"><p>There&#8217;s a well-known quote on this topic.</p></div>
+<div class="sidebarblock">
+<div class="content">
+<div class="title">Slide santayana</div>
+<div class="paragraph"><p>"Those who cannot remember the past are condemned to repeat it." - George Santayana, Life of Reason Vol. 1, 1905</p></div>
+<div class="paragraph"><p><em>Include a picture of Santayana.</em></p></div>
+</div></div>
+<div class="paragraph"><p>Santayana penned this quote as part of his five volume "Life of Reason" series which he wrote during his tenure
+at Harvard University. Among his students were  T. S. Eliot, Robert Frost, Gertrude Stein, and W. E. B. Du Bois.</p></div>
+<div class="sidebarblock">
+<div class="content">
+<div class="title">Slide santayana</div>
+<div class="paragraph"><p>"Those who cannot remember the past are condemned to repeat it." - George Santayana, Life of Reason Vol. 1, 1905</p></div>
+<div class="paragraph"><p><em>Add pictures of Eliot, Frost, Stein, and Du Bois to the slide; on pic per click.</em></p></div>
+</div></div>
+<div class="paragraph"><p>This quote also appears at site of the Auschwitz Concentration Camp from WW II. It&#8217;s a powerful perspective
+on the past.</p></div>
+<div class="paragraph"><p>But I&#8217;m here to talk about the future. And it&#8217;s why I prefer this quote instead:</p></div>
+<div class="sidebarblock">
+<div class="content">
+<div class="title">Slide miller</div>
+<div class="paragraph"><p>"Those who ignore the mistakes of the future are bound to make them." - Joseph D. Miller, 2006.</p></div>
+<div class="paragraph"><p><em>Include picture of Miller. (ex. <a href="https://lifeboat.com/ex/bios.joseph.d.miller">https://lifeboat.com/ex/bios.joseph.d.miller</a>)</em></p></div>
+</div></div>
+<div class="paragraph"><p>Think about that for a moment. What mistakes are the future are we ignoring? This is the question I put
+to you today. This is the challenge. Because when we can recognize future mistakes, we can avoid them.
+We can, as it were, "jump ahead" or "advance an extra grade" in the school of life.</p></div>
+<div class="sidebarblock">
+<div class="content">
+<div class="title">Slide school</div>
+<div class="paragraph"><p><em>Something that invokes school, classroom, or skipping a grade, advancing along a path, etc.</em></p></div>
+</div></div>
+<div class="paragraph"><p>So, here we are the dawn of a new century. One with all sorts of new technological and social challenges ahead of us. And I&#8217;d like to encourage all of us to make Miller&#8217;s warning out watchword. It&#8217;s my hope that it is his challenge that will shape the generations of creative thinkers, inventors, and entrprenouers of the 21st century.</p></div>
+<div class="sidebarblock">
+<div class="content">
+<div class="title"><em><span class="red">Time: 05</span></em></div>
+</div></div>
+<div class="sidebarblock">
+<div class="content">
+<div class="title">Chapter TimeIsCloseAtHand</div>
+<div class="paragraph"><p>Part 1 : The time is close at hand</p></div>
+</div></div>
+<div class="paragraph"><p>Ok, let&#8217;s start our journey on the road to recognizing future mistakes. And let&#8217;s do it by, oddly enough,
+looking back into the past. Back more than 100 years ago - to the late 1800s - when the world was undergoing an incredible
+transformation.</p></div>
+<div class="sidebarblock">
+<div class="content">
+<div class="title">Slide bellAndTelephone</div>
+<div class="paragraph"><p><em>Picture of A. G. Bell. and a click animation that reveals an early model telephone.</em></p></div>
+</div></div>
+<div class="paragraph"><p>near the close of the last century was Alexander Graham Bell&#8217;s telephone was transforming the world. While there were a number of other people working on similar projects, it is Bell that the history books remember and credit with most of the success.  At first the telephone seen as a marvel, but only a novelty of teh age.</p></div>
+<div class="sidebarblock">
+<div class="content">
+<div class="title">slide presidentHayes</div>
+<div class="paragraph"><p><em>picture of President Rutherford B Hayes with quote:</em></p></div>
+<div class="paragraph"><p>"That’s an amazing invention, but who would ever want to use one of them?" - R.B. Hayes, 1876.</p></div>
+</div></div>
+<div class="paragraph"><p>At first, it&#8217;s utility was thought to be limited to a small segment of society; government officials and the rich.</p></div>
+<div class="paragraph"><p>However, in relatively short order,  the telephone quickly became a powerful tool in the arsenal of newspaper reporters who saw it&#8217;s potential to change the speed of information around the globe. Instead of threatening the future of print media, the telephone was seen as a way to improve the quality and accuracy of information in the newspaper. Technically this started with the advent of the telegraph some thirty years before, but the intamcy and immediacy of the telephone greatly sped up the process.</p></div>
+<div class="sidebarblock">
+<div class="content">
+<div class="title">Slide PhoneUsers</div>
+<div class="paragraph"><p><em>old time newspaper reporter talking on an old time phone.</em></p></div>
+</div></div>
+<div class="paragraph"><p>It took some time, but soon another population found the telephone invaluable: business. Telephones expanded the reach of markets, decreased the need for expensive travel, and increased the speed at which information flowed (including information used to buy and sell perishable goods).</p></div>
+<div class="sidebarblock">
+<div class="content">
+<div class="title">Slide PhoneUsers</div>
+<div class="paragraph"><p><em>add pic of a business man on an old-time phone.</em></p></div>
+</div></div>
+<div class="paragraph"><p>And eventually, individuals started installing telephones in their own homes. Telephones made it possible for families to begin to move farther apart and still seem close, increased opportunities for social connection, and spreading information throughout local communities.</p></div>
+<div class="sidebarblock">
+<div class="content">
+<div class="title">Slide PhoneUsers</div>
+<div class="paragraph"><p><em>add pic of a woman in a domestic setting on an old-time phone.</em></p></div>
+</div></div>
+<div class="paragraph"><p>The telephone had arrived. In fact, early figures show that telephone adoption rates were incredible. Installs went from 50k in 1900 to almost 6M in 1910. Ten years!</p></div>
+<div class="sidebarblock">
+<div class="content">
+<div class="title">Slide addingPhones</div>
+<div class="paragraph"><p><em>shot of the Telephone Adoption Rate graph from gDocs</em></p></div>
+</div></div>
+<div class="paragraph"><p>And with this explosion of communications came an entirely new concept: The Communication Network.</p></div>
+<div class="sidebarblock">
+<div class="content">
+<div class="title">Slide PhoneUsers</div>
+<div class="paragraph"><p><em>connect all the images from the previous slides to a central switch. this is the network.</em></p></div>
+<div class="paragraph"><p><strong>replace grey box with switchboard</strong></p></div>
+<div class="ulist"><ul>
+<li>
+<p>
+<a href="http://www.corp.att.com/history/images/switchboard_switching.jpg">http://www.corp.att.com/history/images/switchboard_switching.jpg</a>
+</p>
+</li>
+<li>
+<p>
+<a href="http://www.corp.att.com/history/nethistory/switching.html">http://www.corp.att.com/history/nethistory/switching.html</a>
+</p>
+</li>
+</ul></div>
+</div></div>
+<div class="paragraph"><p>The idea of a "network" was not entirely new. In the early 1800s we built the <em>Train Network</em>. In the mid-1800s we created the <em>Telegraph Network</em>. But the <em>Telephone Network</em> of the early 20th century was orders of magnitude more distruptive and influential.</p></div>
+<div class="sidebarblock">
+<div class="content">
+<div class="title">Slide networks</div>
+<div class="paragraph"><p><em>build slide w/ an old-time locomotive, then a telegraph, then a telephone</em></p></div>
+<div class="paragraph"><p>build per click</p></div>
+</div></div>
+<div class="paragraph"><p>Telephones offered the promise of "instant communication" and invoked in people&#8217;s imagination a network that was, for all intents and purposes <em>alive</em>.</p></div>
+<div class="sidebarblock">
+<div class="content">
+<div class="title">Slide nervousSystem</div>
+<div class="paragraph"><p>"The time is close at hand when the scattered members of civilized communities will be as closely united, so far as instant communication is concerned, as the various members of the body now are by the nervous system." - Scientific American, 1880</p></div>
+<div class="paragraph"><p><em>Include old copy of SA Mag?</em></p></div>
+<div class="paragraph"><p><strong>make the SciAmer reference appear on a click</strong></p></div>
+</div></div>
+<div class="paragraph"><p>This nervous system - this network of telephones - represented a major technological advance. But it also represented
+a problem; one that occurred many times through the history of innovation. All the advancement, all this achievement
+depended not on sleek machinery, but on overworked humans.</p></div>
+<div class="sidebarblock">
+<div class="content">
+<div class="title">Slide SwitchboardRoom</div>
+<div class="paragraph"><p><em>Photo of early switchboard room for telephones. lots of panels, many operators (women, i assume).</em></p></div>
+</div></div>
+<div class="paragraph"><p>Brief side note: The first telephone operators where young boys, not women. These boys had come from the ranks of
+telegraph offices but, it turned out they were seen as unreliable and troublesome.</p></div>
+<div class="paragraph"><p>In fact, it was in my home city of Cincinnati, OH that W. H. Eckert the head of the local telephone company fired
+all the boys and hired over sixty women to staff the switchboards.</p></div>
+<div class="sidebarblock">
+<div class="content">
+<div class="title">Slide Eckert</div>
+<div class="paragraph"><p>"Young ladies are very much superior to boys They are steadier, do not drink beer, and are always on hand." - W. H. Eckert, 1881</p></div>
+<div class="paragraph"><p><em>photo of eckert?</em></p></div>
+</div></div>
+<div class="paragraph"><p>So, it turns out that the marvel of the age was powered by humans dashing about plugging lines together by hand.
+Each connection between two parties required human intervention. This reliance on humans was just assumed in the beginning. In fact, it was considered an essential feature of the network; a kind of safety valve. A governor on machines.</p></div>
+<div class="paragraph"><p>This was so much a part of the thinking on how machine worked that even in the early 1950s and 60s, as computer networks began to develop, this dependence on humans was considered so important as to be acknolwedged in the very <em>name</em> of these early systems.</p></div>
+<div class="sidebarblock">
+<div class="content">
+<div class="title">Slide buildSAGEandSABRE</div>
+<div class="paragraph"><p><em>(pics of SAGE and SABRE systems)</em></p></div>
+<div class="ulist"><ul>
+<li>
+<p>
+<a href="http://plyojump.com/classes/images/computer_history/sage_1954.jpg">http://plyojump.com/classes/images/computer_history/sage_1954.jpg</a>
+</p>
+</li>
+<li>
+<p>
+<a href="http://plyojump.com/classes/mainframe_era.php">http://plyojump.com/classes/mainframe_era.php</a>
+</p>
+</li>
+<li>
+<p>
+<a href="http://www-03.ibm.com/ibm/history/ibm100/images/icp/T482097A41782S76/us">http://www-03.ibm.com/ibm/history/ibm100/images/icp/T482097A41782S76/us</a><em>en_us</em>ibm100<em>sage</em>sabre_reservation_1960__620x350.jpg
+</p>
+</li>
+<li>
+<p>
+<a href="http://www-03.ibm.com/ibm/history/ibm100/us/en/icons/sabre/">http://www-03.ibm.com/ibm/history/ibm100/us/en/icons/sabre/</a>
+</p>
+</li>
+</ul></div>
+<div class="paragraph"><p>build each image on click</p></div>
+</div></div>
+<div class="paragraph"><p>The first network of military RADAR computers was created in the 1950s and was known as the SAGE Network. SAGE stood for <em>Semi-Automatic Ground Environment</em>.</p></div>
+<div class="paragraph"><p>In the early 1960s, the first widely deployed computer network for business was The <em>Semi-Automatic Business Research Environment.</em> You might recognize it by the word <em>SABRE</em>.</p></div>
+<div class="paragraph"><p>Why was it so important in the early days to label them "<em>Semi</em>-Automatic"? And what was it about this historic dependence networks have on human intervention that is important for us to consider when we think about the future of APIs?</p></div>
+<div class="sidebarblock">
+<div class="content">
+<div class="title"><em><span class="red">Time: 15</span></em></div>
+</div></div>
+<div class="sidebarblock">
+<div class="content">
+<div class="title">Chapter GhostsInTheMachine</div>
+<div class="paragraph"><p>Part 2 : The ghost in the machine</p></div>
+</div></div>
+<div class="paragraph"><p>To continue, I need to tell you the other story I wanted to be sure to cover today. This one reaches back even farther into the past. All the way back to the last half of the 18th Century - 1770 to be more exact. Near the end of the Age of Enlightenment. To the House of Hapsburg in Austria and the court of Maria Theresa.</p></div>
+<div class="sidebarblock">
+<div class="content">
+<div class="title">Slide MariaTheresa</div>
+<div class="paragraph"><p><em>photo of Maria Theresa (ex. <a href="http://en.wikipedia.org/wiki/Maria_Theresa_of_Austria">http://en.wikipedia.org/wiki/Maria_Theresa_of_Austria</a>).</em></p></div>
+</div></div>
+<div class="paragraph"><p>Due to a series of military and family cirsumatancdes, Maria Theresa was Austria&#8217;s monarch at a time when it was deemed unacceptable for women to rule. Technically, she shared the throne w/ her husband Francis the I and, after this death in 1765, with her son until her death in 1780. But, in truth, it was Maria Theresa who was the power behind the House of Hapsburg for close to 40 years.</p></div>
+<div class="paragraph"><p>By the way, you may not recognize the name of Maria Theresa of Austria, but I bet you would recognise her youngest daughter named Maria Antonia. After she married her French suitor, she changed her name to Marie-Antoinette. Now, Marie-Antoinette is famous for several things.</p></div>
+<div class="sidebarblock">
+<div class="content">
+<div class="title">Slide LetThemEatCake</div>
+<div class="paragraph"><p><em>fancy cake (something that might have come from the late 1800s? would be cool if the lettering actually said "Let them eat cake".[e.g. <a href="http://allinthenameofnoms.files.wordpress.com/2011/05/let-them-eat-cake-7.jpg">http://allinthenameofnoms.files.wordpress.com/2011/05/let-them-eat-cake-7.jpg</a>])</em></p></div>
+</div></div>
+<div class="paragraph"><p>One of the more famous is the attribution of the meme "Let them eat cake." although it turns out unlikely she
+ever actually said that, the meme has stuck over the centuries.</p></div>
+<div class="sidebarblock">
+<div class="content">
+<div class="title">Slide SchönbrunnPalace</div>
+<div class="paragraph"><p><em>pic of the Schönbrunn Palace</em></p></div>
+<div class="ulist"><ul>
+<li>
+<p>
+<a href="http://en.wikipedia.org/wiki/Sch%C3%B6nbrunn_Palace">http://en.wikipedia.org/wiki/Sch%C3%B6nbrunn_Palace</a>
+</p>
+</li>
+</ul></div>
+</div></div>
+<div class="paragraph"><p>Anyway, Marie Theresa entertained many skilled inventors and illusionists in her court at Schönbrunn Palace. At one of these events a rather prodigous inventor, Wolfgang von Kempelen, was in attendance. As he watched a magician name Francois Pelletier perform his tricks (most of which involved the use of magnets), he was somewhat appalled at the guillibility of those in the audience and he quickly and easily debunked Pelletier&#8217;s tricks.</p></div>
+<div class="sidebarblock">
+<div class="content">
+<div class="title">Slide magicMagnets</div>
+<div class="paragraph"><p><em>some image that makes magic w/ magnet seem childish</em></p></div>
+<div class="ulist"><ul>
+<li>
+<p>
+<a href="http://www.klutz.com/common/images/products/main/magneticmagic.jpg">http://www.klutz.com/common/images/products/main/magneticmagic.jpg</a>
+</p>
+</li>
+</ul></div>
+</div></div>
+<div class="paragraph"><p>This amateurish display prompted him to announce to her Highness and all in attendance that, in no more than six months time, he would return with a truely remarkable illusion. One that would baffle anyone who attempted to explain it. His illusion, he claimed, would be truely magical.</p></div>
+<div class="sidebarblock">
+<div class="content">
+<div class="title">Slide vonKempelen</div>
+<div class="ulist"><ul>
+<li>
+<p>
+<a href="http://en.wikipedia.org/wiki/Wolfgang_von_Kempelen">http://en.wikipedia.org/wiki/Wolfgang_von_Kempelen</a>
+</p>
+</li>
+</ul></div>
+</div></div>
+<div class="paragraph"><p>Now, Von Kempelen had a reputation as a skilled thinker, engineer, and inventor. He spoke several languages, designed bridges, bulidings, steam-engines, even an early form of a typewriter. His boast was not taken lightly and all waited for his return six months hence to see what he would come up with.</p></div>
+<div class="sidebarblock">
+<div class="content">
+<div class="title">Slide theTurk</div>
+<div class="paragraph"><p><em>suggest using the drawing/plate for this slide. something that does not look "real" (like the pic)</em></p></div>
+<div class="ulist"><ul>
+<li>
+<p>
+<a href="http://en.wikipedia.org/wiki/The_Turk">http://en.wikipedia.org/wiki/The_Turk</a>
+</p>
+</li>
+</ul></div>
+</div></div>
+<div class="paragraph"><p>What he brought with him upon his return was a huge contraption he called the "Chess-Playing Automaton." He told her Majesty that it was a machine that would play chess and always win. It was an incredibly elaborate and ornate with a life-sized maniquine dressed in Turkish garb, holding a long smoking pipe in one hand and manipulating a full-zsized chessboard with the other.</p></div>
+<div class="sidebarblock">
+<div class="content">
+<div class="title">Slide theTurk</div>
+<div class="paragraph"><p><em>now use a pic of one of the replicas</em></p></div>
+<div class="ulist"><ul>
+<li>
+<p>
+<a href="http://en.wikipedia.org/wiki/The_Turk">http://en.wikipedia.org/wiki/The_Turk</a>
+</p>
+</li>
+</ul></div>
+</div></div>
+<div class="paragraph"><p>All this rested atop a large cabinet filled with gears, cables, levers, and other machinery. There were three compartments, each opening up to reveal part of the apparatus.</p></div>
+<div class="sidebarblock">
+<div class="content">
+<div class="title">Slide hapsburgsAndOttoman</div>
+<div class="paragraph"><p><em>a few pics that show the wars through the ages</em></p></div>
+<div class="ulist"><ul>
+<li>
+<p>
+<a href="http://en.wikipedia.org/wiki/Ottoman%E2%80%93Habsburg_wars">http://en.wikipedia.org/wiki/Ottoman%E2%80%93Habsburg_wars</a>
+</p>
+</li>
+</ul></div>
+<div class="paragraph"><p>automation (w/o clicks) works here</p></div>
+</div></div>
+<div class="paragraph"><p>It should be noted that the use of Turksih garb for the manequine was a cheeky move. Von Kempelen was well-aware that the Hapsburgs had a long history of war with the Ottoman Empire and that Austrians continued to despise the Turks as a people. Von Kempeleon was a master showman.</p></div>
+<div class="paragraph"><p>All accounts of the event at Schönbrunn Palace indicate Von Kempelen&#8217;s illusion was a hit. The machine won every chess match it played with anyone who wished to challenge it - usually within 30 minutes. Those in attendance were astonished and her Highness was most impressed. After this single performance, Von Kempelen dismantled the machine and put it into storage, resisting requests for additional appearances of this "Mechanical Turk" as it was then called.</p></div>
+<div class="paragraph"><p>However, in 1781 - ten years after he unvieled his illusion, Maria Theresa&#8217;s eldest son, Emperor Joseph II, ordered Von Kempelen to re-assemble the Turk and, after a special performance in Vienna, to embark on a tour of Europe.</p></div>
+<div class="sidebarblock">
+<div class="content">
+<div class="title">Slide buildTurkTour1</div>
+<div class="paragraph"><p><em>pics of euro-trash who played the Turk (include France/England/Germany images?)</em></p></div>
+<div class="ulist"><ul>
+<li>
+<p>
+<a href="http://en.wikipedia.org/wiki/Paul_I_of_Russia">http://en.wikipedia.org/wiki/Paul_I_of_Russia</a>
+</p>
+</li>
+<li>
+<p>
+<a href="http://en.wikipedia.org/wiki/La_Tour_d%27Auvergne#Later_history:_Dukes_of_Bouillon_and_Albret">http://en.wikipedia.org/wiki/La_Tour_d%27Auvergne#Later_history:_Dukes_of_Bouillon_and_Albret</a>
+</p>
+</li>
+<li>
+<p>
+<a href="http://en.wikipedia.org/wiki/Benjamin_Franklin">http://en.wikipedia.org/wiki/Benjamin_Franklin</a>
+</p>
+</li>
+</ul></div>
+<div class="paragraph"><p>make it a build-slide (per click) maybe include city names in text as part of the build? (Paris, London, Leipzig, Dresden, Amsterdam)</p></div>
+</div></div>
+<div class="paragraph"><p>His tour took him to Paris, where - along with a number of well-know chess masters - the machine was pitted against the Grand Duke of Russia, The Duke of Bouillon, even Benjamin Franklin played a round while Franklin was in Paris as US Ambassador to France. From Paris, the machine went on to London, Liepzig, Dresden, and Amsterdam. Eventually, Von Kempelen was able to return home after more than ten years of touring. He, again, placed the machine into storage and there it stayed until his death in 1804.</p></div>
+<div class="sidebarblock">
+<div class="content">
+<div class="title">Slide whatIsIt</div>
+<div class="paragraph"><p><em>something that indicates the mystery of the machine. a single image? several?</em></p></div>
+</div></div>
+<div class="paragraph"><p>Throughout the thirty years of the machine&#8217;s display no-one could figure out how it worked. At every opportunity "experts" were invited to attend and inspect the device during performances. Von Kempelen invited them to bring magnets, lodestones, any other items they wished in order to test his machine. On one occasion a "spiritualist" came to view the machine and aftger only a few minutes she left the room in horror saying that it was a vessel for ghosts and demons.</p></div>
+<div class="sidebarblock">
+<div class="content">
+<div class="title">slide turkReveal</div>
+<div class="paragraph"><p><em>image showing how the turk works</em></p></div>
+<div class="ulist"><ul>
+<li>
+<p>
+<a href="http://farm3.static.flickr.com/2035/2129297744_f3589d8e86.jpg">http://farm3.static.flickr.com/2035/2129297744_f3589d8e86.jpg</a>
+</p>
+</li>
+<li>
+<p>
+<a href="http://bibliodyssey.blogspot.com/2007/12/turk-chess-automaton-hoax.html">http://bibliodyssey.blogspot.com/2007/12/turk-chess-automaton-hoax.html</a>
+</p>
+</li>
+</ul></div>
+</div></div>
+<div class="paragraph"><p>As we now know, the Turk was operated by a chess-playing human hidden inside the cabinet. Von Kempelen used common misdirection in the construction of the box to make it appear it was full of gears when, in fact, the gears where only a thin facade that hid the open compartment with a small chair, a viewport, and levers with which to operate the manequin.</p></div>
+<div class="paragraph"><p>The "ghost in the machine" was a human all along. And the ghost would continue to haunt the machine.</p></div>
+<div class="sidebarblock">
+<div class="content">
+<div class="title">Slide buildTurkTour1</div>
+<div class="paragraph"><p><em>pics of more peeps who played the Turk (include France/England/Germany images?)</em></p></div>
+<div class="ulist"><ul>
+<li>
+<p>
+<a href="http://en.wikipedia.org/wiki/Napoleon_I_of_France">http://en.wikipedia.org/wiki/Napoleon_I_of_France</a>
+</p>
+</li>
+<li>
+<p>
+<a href="http://en.wikipedia.org/wiki/Catherine_the_Great">http://en.wikipedia.org/wiki/Catherine_the_Great</a>
+</p>
+</li>
+</ul></div>
+<div class="paragraph"><p>make it a build-slide (per click)</p></div>
+<div class="paragraph"><p>city names: Paris, Milan, London, New York, Boston, Philadelphia, Wash DC, Havana)</p></div>
+</div></div>
+<div class="paragraph"><p>After Von Kempelen&#8217;s death, an enhanced version of the machine - one that included the ability to yell our "Check" whenever the machine had cornered the opponent&#8217;s King - continued traveling, with various owners, for the another 50 years. Along the way it spent a great deal of time in the United States and attracted the attention of Edgar Allen Poe, who published an article about the device in 1836.</p></div>
+<div class="sidebarblock">
+<div class="content">
+<div class="title">Slide poeAndTurk</div>
+<div class="ulist"><ul>
+<li>
+<p>
+<a href="http://en.wikipedia.org/wiki/Edgar_Allan_Poe">http://en.wikipedia.org/wiki/Edgar_Allan_Poe</a>
+</p>
+</li>
+<li>
+<p>
+<a href="http://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/Southern_lit_mess_1837_feb_pym.jpg/220px-Southern_lit_mess_1837_feb_pym.jpg">http://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/Southern_lit_mess_1837_feb_pym.jpg/220px-Southern_lit_mess_1837_feb_pym.jpg</a>
+</p>
+</li>
+</ul></div>
+<div class="paragraph"><p>proly need a better image of the "Southern Literary Messenger" possibly april 1936 w/ "Maizel&#8217;s Chess Player" article shown</p></div>
+</div></div>
+<div class="paragraph"><p>By the mid-1800s several aticles and even books about the Mechanical Turk were published. There was one that focused, not just on the machine, but on it&#8217;s inventor Von Kempelen. And one of his more interesting inventions was a "speaking machine." A device Von Kempelen completed not long before his death in 1804.</p></div>
+<div class="sidebarblock">
+<div class="content">
+<div class="title">Slide speakingMachine</div>
+<div class="ulist"><ul>
+<li>
+<p>
+<a href="http://en.wikipedia.org/wiki/Wolfgang_von_Kempelen%27s_Speaking_Machine">http://en.wikipedia.org/wiki/Wolfgang_von_Kempelen%27s_Speaking_Machine</a>
+</p>
+</li>
+<li>
+<p>
+<a href="http://en.wikipedia.org/wiki/Wolfgang_von_Kempelen">http://en.wikipedia.org/wiki/Wolfgang_von_Kempelen</a>
+</p>
+</li>
+</ul></div>
+<div class="paragraph"><p><em>(pic of the machine, possibly more than one, and Von Kempelen)</em></p></div>
+</div></div>
+<div class="paragraph"><p>This machine had a keyboard in which produced audible speech through a series of  bellows. While crude in 1804, a greatly improved version was reconstructed by Sir Charles Wheatstone in 1837. Wheatstone was another prodigious inventor. He perfected the English concertina, an early form of the microphone, and was even involved in the creation of telegraph machines in the mid 1800s.</p></div>
+<div class="sidebarblock">
+<div class="content">
+<div class="title">Slide wheatstoneAndBell</div>
+<div class="ulist"><ul>
+<li>
+<p>
+<a href="http://en.wikipedia.org/wiki/Sir_Charles_Wheatstone">http://en.wikipedia.org/wiki/Sir_Charles_Wheatstone</a>
+</p>
+</li>
+</ul></div>
+<div class="paragraph"><p><em>include pics of the concertina &amp; his telegraph (click animation)</em></p></div>
+</div></div>
+<div class="paragraph"><p>It so happens that one of the people avidly following Wheatstone&#8217;s work and writings was a young inventor by the name of Alexander Graham Bell.</p></div>
+<div class="paragraph"><p>And that brings us back to where we began&#8230;</p></div>
+<div class="sidebarblock">
+<div class="content">
+<div class="title"><em><span class="red">Time: 25</span></em></div>
+</div></div>
+<div class="sidebarblock">
+<div class="content">
+<div class="title">Chapter Slide IgnoringFuture</div>
+<div class="paragraph"><p>Part 3 : Ignoring the ghosts of the future</p></div>
+</div></div>
+<div class="sidebarblock">
+<div class="content">
+<div class="title">Slide AGBell</div>
+<div class="paragraph"><p><em>pic of Alexander Graham Bell</em></p></div>
+</div></div>
+<div class="paragraph"><p>One of the things Alexander Graham Bell insisted upon when he created his telephone is that the devices NOT be sold in pairs.
+This was a problem for a number of his early backers. It made no sense to them to sell a customer a <em>single</em> telephone. They
+thought "No one will buy a single telephone. They won&#8217;t have anyone to talk with!" Of course, this turned out to be another
+stroke of genius from Bell. If they were sold in pairs, each time a customer wanted to call someone else, they&#8217;d need another
+telephone!</p></div>
+<div class="sidebarblock">
+<div class="content">
+<div class="title">Slide lotsOfPhones</div>
+<div class="paragraph"><p><em>pic of phone after phone that eventually fills the screen</em></p></div>
+</div></div>
+<div class="paragraph"><p>Now, to us, having a telephone on your desk at work for every person you want to call seems silly, right? But, in fact, this "selling in pairs" is the exact model we use for Web Services.</p></div>
+<div class="sidebarblock">
+<div class="content">
+<div class="title">Slide lotsOfServices</div>
+<div class="paragraph"><p><em>pic of twitter icon + API page, Facebook + API page, (more needed) until the screen is filled up</em></p></div>
+</div></div>
+<div class="paragraph"><p>Each time we create a service (publisher), we create an API (consumer) and each time we want someone to use our service, we
+get them to add another `<em>telephone</em> to thier desktop. Pretty soon our desktop looks like this:</p></div>
+<div class="sidebarblock">
+<div class="content">
+<div class="title">Slide phonesOnDesk</div>
+<div class="paragraph"><p>PC/Mac with lots of telephones, each w/ a WebService icon (twitter, etc.)_</p></div>
+</div></div>
+<div class="paragraph"><p>Well, actually, our desktop looks like this, right?</p></div>
+<div class="sidebarblock">
+<div class="content">
+<div class="title">Slide iphoneHomeScreen</div>
+<div class="paragraph"><p><em>pic of iPhone home screen w/ lots of icons</em></p></div>
+</div></div>
+<div class="paragraph"><p>And <em>that</em> is a problem we need to fix.</p></div>
+<div class="paragraph"><p>It&#8217;s important to remember that we solved this problem for <em>documents</em> back in the late 90s.</p></div>
+<div class="sidebarblock">
+<div class="content">
+<div class="title">Slide mosaicBrowser</div>
+<div class="paragraph"><p><em>pic of early browser (might need a better image than this)</em></p></div>
+<div class="ulist"><ul>
+<li>
+<p>
+<a href="http://www.wired.com/images_blogs/thisdayintech/2010/04/mos-10.jpg">http://www.wired.com/images_blogs/thisdayintech/2010/04/mos-10.jpg</a>
+</p>
+</li>
+<li>
+<p>
+<a href="http://www.wired.com/thisdayintech/2010/04/0422mosaic-web-browser/">http://www.wired.com/thisdayintech/2010/04/0422mosaic-web-browser/</a>
+</p>
+</li>
+</ul></div>
+</div></div>
+<div class="paragraph"><p>And we <em>have</em> improved that one receiver over the last fifteen years&#8230;</p></div>
+<div class="sidebarblock">
+<div class="content">
+<div class="title">Slide lotsOfBrowsers</div>
+<div class="paragraph"><p><em>build slide of many browsers/brands over the years</em></p></div>
+</div></div>
+<div class="paragraph"><p>But that&#8217;s old news. We&#8217;re not in the <em>Age of documents</em> anymore and this receiver is coming up short. We need a new one
+that works in the same general way with <em>all</em> the services out there, not just one, and not just the ones we know about
+today. It needs to work with services that haven&#8217;t even been invented yet.</p></div>
+<div class="sidebarblock">
+<div class="content">
+<div class="title">Slide notSure??</div>
+<div class="paragraph"><p><em>pic of some client? lots of services? maybe a mystery client and has all the services connected?</em></p></div>
+</div></div>
+<div class="paragraph"><p>But we don&#8217;t have this yet. Instead, every time we want to add a new service, we need humans to build us a dedicated client
+app and we need to install that app. In fact, it&#8217;s worse than that. Once we install the dedicated app, we have to keep installing
+it over and over again. Each time a new feature is added to the service we need a new version app. It&#8217;s as if we had a telephone
+on our desk at work and then, when a new feature was added, we needed to update the phone dial.</p></div>
+<div class="sidebarblock">
+<div class="content">
+<div class="title">Slide phoneWithNewDial</div>
+<div class="paragraph"><p><em>pic of classic telephone with 12 buttons, then add a new button (<em>A</em>?) to show adding a new feature to the service</em></p></div>
+</div></div>
+<div class="paragraph"><p>Do this enough times and the phone gets to be really hard to deal with.</p></div>
+<div class="sidebarblock">
+<div class="content">
+<div class="title">Slide phoneWithCrazyDial</div>
+<div class="paragraph"><p><em>pic of phone dial with all sorts of letters and symbols added - it&#8217;s a mess.</em></p></div>
+</div></div>
+<div class="paragraph"><p>But we do that all the time today, right? We keep installing the same app multiple times - whenever the service tells us to - all in hopes that finally it will have all the features we need.</p></div>
+<div class="sidebarblock">
+<div class="content">
+<div class="title">Slide installPhoneApps</div>
+<div class="paragraph"><p><em>pic showing the install process. hopefully an ugly example ;)</em></p></div>
+</div></div>
+<div class="paragraph"><p>Because, right now we need human intervention to make all this API stuff work. The API Economy is a gigantic Mechanical Turk.</p></div>
+<div class="sidebarblock">
+<div class="content">
+<div class="title">Slide updatedTurk</div>
+<div class="paragraph"><p>_edit this pic?</p></div>
+<div class="ulist"><ul>
+<li>
+<p>
+<a href="http://4.bp.blogspot.com/-YGavyHPmUEM/UZE2AK7tXOI/AAAAAAAAKEk/bO8LK37c0aY/s1600/turk2.jpg">http://4.bp.blogspot.com/-YGavyHPmUEM/UZE2AK7tXOI/AAAAAAAAKEk/bO8LK37c0aY/s1600/turk2.jpg</a>
+</p>
+</li>
+<li>
+<p>
+<a href="http://bobcanada92.blogspot.com/2013/05/doctor-who-season-7-episode-12.html">http://bobcanada92.blogspot.com/2013/05/doctor-who-season-7-episode-12.html</a>
+</p>
+</li>
+</ul></div>
+</div></div>
+<div class="paragraph"><p>Think about it. Each time someone wants to set up a new "conversation" between a service and a client app, they need to get an "operator" to make the connection for them.</p></div>
+<div class="sidebarblock">
+<div class="content">
+<div class="title">Slide apiOperators</div>
+<div class="paragraph"><p><em>two pics: one of switchboard operators (use the one from earlier?) next to one of a room full of programmers in cubicles</em></p></div>
+<div class="ulist"><ul>
+<li>
+<p>
+<a href="http://gurovich.com/site/wp-content/uploads/2011/07/tron-28-office-cubicles.jpg">http://gurovich.com/site/wp-content/uploads/2011/07/tron-28-office-cubicles.jpg</a>
+</p>
+</li>
+<li>
+<p>
+<a href="http://gurovich.com/site/2011/07/19/the-dinosaur-feed-pen/">http://gurovich.com/site/2011/07/19/the-dinosaur-feed-pen/</a>
+</p>
+</li>
+</ul></div>
+</div></div>
+<div class="paragraph"><p>And each time the service changes that means we need to start a new "conversation" and we need to do it all over again. This
+is crazy and it has to stop.</p></div>
+<div class="sidebarblock">
+<div class="content">
+<div class="title">Slide IndistinguishableFromMagic</div>
+<div class="paragraph"><p><em>(include his pic?)</em></p></div>
+<div class="paragraph"><p><em>"Any sufficiently advanced technology is indistinguishable from magic." - Arthur C. Clarke (1917 - 2008)</em></p></div>
+</div></div>
+<div class="paragraph"><p>One of the things we learned from Von Kempelen and his chess-playing Turk illusion is that people love the mystery. They want to believe in the magic.
+And we certainly have lots of "magic" around us.</p></div>
+<div class="sidebarblock">
+<div class="content">
+<div class="title">Slide buildMagic</div>
+<div class="paragraph"><p><em>build slide of all the cool "magic" of the 21st century (cell phone, google glass, retina scan security, driverless car, micro robots, etc.)</em></p></div>
+</div></div>
+<div class="paragraph"><p>But it&#8217;s important that we not get caught up in the illusion. That we remember that, for now at least, quite a bit of our API Economy remains dependent on the direct laobr of thousands of unseen individuals; people "underneath the tabletop" working the levers for us in order that we can enjoy the magic.</p></div>
+<div class="sidebarblock">
+<div class="content">
+<div class="title">Slide buildWorkers</div>
+<div class="paragraph"><p><em>build slide of all the human workers at Chinese iPhone factories, programmers in a room, others?)</em></p></div>
+</div></div>
+<div class="paragraph"><p>These are the "ghosts in the machine" - the labor that makes it all possible. And there are limits to this illusion. Like Von Kempelen&#8217;s Turk, we are, sooner or later, bound to be shown up for the charlatan&#8217;s that we are. If we want to move the API Economy to a point where it is truely scalable and sustainable, we must rid ourselves of this belief in ghosts and magic.</p></div>
+<div class="paragraph"><p>The telephone network was able to achieve this. As early as 1920, Panel Switches began to appear. They were mechanical; they threw
+latches to complete connections.</p></div>
+<div class="sidebarblock">
+<div class="content">
+<div class="title">Slide switchBuild</div>
+<div class="paragraph"><p><em>build slide with the following:</em></p></div>
+<div class="paragraph"><p><em>Panel Switch</em></p></div>
+<div class="ulist"><ul>
+<li>
+<p>
+<a href="http://upload.wikimedia.org/wikipedia/commons/0/09/Panel_switch_district_selector_frame.jpg">http://upload.wikimedia.org/wikipedia/commons/0/09/Panel_switch_district_selector_frame.jpg</a>
+</p>
+</li>
+<li>
+<p>
+<a href="http://en.wikipedia.org/wiki/Panel_switch">http://en.wikipedia.org/wiki/Panel_switch</a>
+</p>
+</li>
+</ul></div>
+</div></div>
+<div class="paragraph"><p>In the early 1960s electronic switches appeared using wire relays to complete the connections.</p></div>
+<div class="sidebarblock">
+<div class="content">
+<div class="title">Slide switchBuild</div>
+<div class="paragraph"><p><em>build slide with the following:</em></p></div>
+<div class="paragraph"><p><em>Electronic Switches</em></p></div>
+<div class="ulist"><ul>
+<li>
+<p>
+<a href="http://www.centralofficeonline.com/Summerside.jpg">http://www.centralofficeonline.com/Summerside.jpg</a>
+</p>
+</li>
+<li>
+<p>
+<a href="http://www.centralofficeonline.com/step.html">http://www.centralofficeonline.com/step.html</a>
+</p>
+</li>
+</ul></div>
+</div></div>
+<div class="paragraph"><p>And it was in the 1970s that we start to see fully digital switching gear for telephone connections.</p></div>
+<div class="sidebarblock">
+<div class="content">
+<div class="title">Slide switchBuild</div>
+<div class="paragraph"><p><em>build slide with the following:</em></p></div>
+<div class="paragraph"><p><em>Digital Switches</em></p></div>
+<div class="ulist"><ul>
+<li>
+<p>
+<a href="http://home.feierabend.com/lahnelster/bild72.jpg">http://home.feierabend.com/lahnelster/bild72.jpg</a>
+</p>
+</li>
+<li>
+<p>
+<a href="http://www.zuoda.net/search.aspx?q=alcatel++cem&amp;offset=500">http://www.zuoda.net/search.aspx?q=alcatel++cem&amp;offset=500</a>
+</p>
+</li>
+</ul></div>
+</div></div>
+<div class="paragraph"><p>Now, that&#8217;s close to 100 years between the invention of the phone and fully digital switching. But it&#8217;s less than fifty years
+after the telephone is invented before the first automated switches are widespread. That&#8217;s just over two generations.</p></div>
+<div class="paragraph"><p>For another example, the first Robotic Arm was patented in 1954 by Devol and Engleberger. Within five years this robot (called the UNIMATE) was installed at a General Motors assembly plant in New Jersey.</p></div>
+<div class="sidebarblock">
+<div class="content">
+<div class="title">Slide devolUnimate</div>
+<div class="paragraph"><p><em>pic of Devol and Englerberger? and then the UNIMATE (make it a build slide?)</em></p></div>
+<div class="ulist"><ul>
+<li>
+<p>
+<a href="http://www.blogcdn.com/www.engadget.com/media/2011/08/8-16-2011devol1-obit.jpg">http://www.blogcdn.com/www.engadget.com/media/2011/08/8-16-2011devol1-obit.jpg</a> (pretty sure this is both of them)
+</p>
+</li>
+<li>
+<p>
+<a href="http://www.engadget.com/2011/08/16/george-devol-creator-of-the-first-industrial-robot-arm-dies-at/">http://www.engadget.com/2011/08/16/george-devol-creator-of-the-first-industrial-robot-arm-dies-at/</a>
+</p>
+</li>
+<li>
+<p>
+<a href="http://www.wfs.org/Upload/pictures/futuristmj2013_unimate.jpg?1364864571">http://www.wfs.org/Upload/pictures/futuristmj2013_unimate.jpg?1364864571</a>
+</p>
+</li>
+<li>
+<p>
+<a href="http://www.wfs.org/futurist/2013-issues-futurist/may-june-2013-vol-47-no-3/robots-work-toward-smarter-factory">http://www.wfs.org/futurist/2013-issues-futurist/may-june-2013-vol-47-no-3/robots-work-toward-smarter-factory</a>
+</p>
+</li>
+</ul></div>
+</div></div>
+<div class="paragraph"><p>Ford&#8217;s first moving assembly line appeared in 1913.</p></div>
+<div class="sidebarblock">
+<div class="content">
+<div class="title">slide fordAssemblyLine</div>
+<div class="paragraph"><p><em>this is an OK pic. might be better out there?</em></p></div>
+<div class="ulist"><ul>
+<li>
+<p>
+<a href="http://cliojournal.wikispaces.com/file/view/ford-model-a-assembly-line.jpg/224235130/ford-model-a-assembly-line.jpg">http://cliojournal.wikispaces.com/file/view/ford-model-a-assembly-line.jpg/224235130/ford-model-a-assembly-line.jpg</a>
+</p>
+</li>
+<li>
+<p>
+<a href="http://cliojournal.wikispaces.com/1920+Motor+car">http://cliojournal.wikispaces.com/1920+Motor+car</a>
+</p>
+</li>
+</ul></div>
+</div></div>
+<div class="paragraph"><p>Again, that&#8217;s about two generations between the the Turk-style work and automation. Two generations.</p></div>
+<div class="sidebarblock">
+<div class="content">
+<div class="title">slide robotCarFactory</div>
+<div class="ulist"><ul>
+<li>
+<p>
+<a href="http://thebreakthrough.org/images/main_image/robot_arms_at_car_factory.jpg">http://thebreakthrough.org/images/main_image/robot_arms_at_car_factory.jpg</a>
+</p>
+</li>
+<li>
+<p>
+<a href="http://thebreakthrough.org/index.php/programs/economic-growth/P21">http://thebreakthrough.org/index.php/programs/economic-growth/P21</a>
+</p>
+</li>
+</ul></div>
+</div></div>
+<div class="paragraph"><p>Now let&#8217;s look at our world - the World Wide Web.</p></div>
+<div class="sidebarblock">
+<div class="content">
+<div class="title">slide wwwAndCERN</div>
+<div class="paragraph"><p><em>pic of tim BL (and maybe the first WWW computer) proly standard quote layout here</em></p></div>
+<div class="ulist"><ul>
+<li>
+<p>
+<a href="http://home.web.cern.ch/about/birth-web">http://home.web.cern.ch/about/birth-web</a>
+</p>
+</li>
+<li>
+<p>
+<a href="http://home.web.cern.ch/sites/home.web.cern.ch/files/styles/medium/public/image/about_section_page/2013/01/bernerslee.jpg?itok=_ycR_q-1">http://home.web.cern.ch/sites/home.web.cern.ch/files/styles/medium/public/image/about_section_page/2013/01/bernerslee.jpg?itok=_ycR_q-1</a>
+</p>
+</li>
+<li>
+<p>
+<a href="http://www.w3.org/History/1989/Image1.gif">http://www.w3.org/History/1989/Image1.gif</a>
+</p>
+</li>
+<li>
+<p>
+<a href="http://www.w3.org/History/1989/proposal.html">http://www.w3.org/History/1989/proposal.html</a>
+</p>
+</li>
+</ul></div>
+<div class="paragraph"><p>include this quote: "A web of nodes in which the user can browse at will"</p></div>
+</div></div>
+<div class="paragraph"><p>in 1993 The Organization for Nuclear Research (also known as CERN) announced that the World Wide Web - as designed by Tim Berners-Lee - was free for all to use. Twenty years ago this year. That&#8217;s one generation - in human terms.</p></div>
+<div class="paragraph"><p>But there are some who think that a "generation" should be computed differently in this digital age. Estimates of the "generation rate" of the Internet to be between five and seven years. IOW, one "human" year is equal to five "Internet year." At that rate, we&#8217;re now wrapping up our fourth generation. Four generations and we&#8217;re still dependent on the same assembly lines, manual labor, and switchboard operators we relied upon at the very start. That&#8217;s a bummer.</p></div>
+<div class="sidebarblock">
+<div class="content">
+<div class="title">Slide mooresLaw</div>
+<div class="paragraph"><p><em>not sure what to do here. Would like some image/graphic that speaks to this "Internet Years" v. "Human Years" idea.</em></p></div>
+</div></div>
+<div class="paragraph"><p>But maybe the estimates don&#8217;t mean much here. Maybe we should stick to using the same measure as all the others. In that case, we&#8217;re only one more generation away from truly automating the Web and scaling the API Economy past the limits of human labor. Does that sound right? Do we need to wait another twenty years before we break free of manually editing each API every time it changes?</p></div>
+<div class="sidebarblock">
+<div class="content">
+<div class="title">Slide 20yrsFromNow</div>
+<div class="paragraph"><p><em>something that shows the passage of time, maybe a stack of calendars with 2033 on the top with a date circled and the note "Automate the Web today" like a to-do item</em></p></div>
+</div></div>
+<div class="paragraph"><p>I hope not. I&#8217;d hate to think of the kind of world where we have tens of thousands mechanical turks operating behind the scenes all over the world propping up our API Economy. What would that be like?</p></div>
+<div class="sidebarblock">
+<div class="content">
+<div class="title">Slide HgWellsFuture</div>
+<div class="paragraph"><p><em>pic of eloi meeting center?</em></p></div>
+<div class="ulist"><ul>
+<li>
+<p>
+<a href="http://www.idyllopuspress.com/meanwhile/images2/tm_eloisphinxes.jpg">http://www.idyllopuspress.com/meanwhile/images2/tm_eloisphinxes.jpg</a>
+</p>
+</li>
+<li>
+<p>
+<a href="http://www.idyllopuspress.com/meanwhile/6310/george-pals-time-machine/">http://www.idyllopuspress.com/meanwhile/6310/george-pals-time-machine/</a>
+</p>
+</li>
+</ul></div>
+</div></div>
+<div class="paragraph"><p>The author H.G. Wells had a pretty strong opinion of what our future would look like if we forced not just the
+ghosts, but the machines themselves into an underground paraellel existence.</p></div>
+<div class="sidebarblock">
+<div class="content">
+<div class="title">Slide HgWellsFuture</div>
+<div class="paragraph"><p><em>add Morlock &amp; Eloi pics</em></p></div>
+<div class="ulist"><ul>
+<li>
+<p>
+<a href="http://3.bp.blogspot.com/-rkMjEKpNKA4/TgJFl2L8VLI/AAAAAAAAAYk/_wag2q6xOF4/s1600/morlocks.jpg">http://3.bp.blogspot.com/-rkMjEKpNKA4/TgJFl2L8VLI/AAAAAAAAAYk/_wag2q6xOF4/s1600/morlocks.jpg</a>
+</p>
+</li>
+<li>
+<p>
+<a href="http://twocrabapples.blogspot.com/2012/04/savior-who-descends-gospel-and-time.html">http://twocrabapples.blogspot.com/2012/04/savior-who-descends-gospel-and-time.html</a>
+</p>
+</li>
+<li>
+<p>
+<a href="http://www.offscreen.com/images/Eloi.jpg">http://www.offscreen.com/images/Eloi.jpg</a>
+</p>
+</li>
+<li>
+<p>
+<a href="http://www.offscreen.com/index.php/pages/essays/vertical_topography/">http://www.offscreen.com/index.php/pages/essays/vertical_topography/</a>
+</p>
+</li>
+</ul></div>
+</div></div>
+<div class="paragraph"><p>As stark as his vision was, it showed a clear understanding of the possible dangers of ignoring the ghosts in the
+machine. While I don&#8217;t think we&#8217;re heading for this kind of dystopia, I do think some of us continue ignore the humans that power our lives today. And I worry that we&#8217;re not always doing as much as we can to elminate the ghosts.</p></div>
+<div class="paragraph"><p>So what can we do? What tangible work is before us that allows us to pay heed both Santayana and Miller?</p></div>
+<div class="sidebarblock">
+<div class="content">
+<div class="title">Slide SantayanaAndMiller</div>
+<div class="paragraph"><p><em>a build slide (per click) of Santayana &amp; Quote (see above) and Miller and quote (see above)</em></p></div>
+</div></div>
+<div class="paragraph"><p>First, we need to internalize the lessons from UNIMATE.</p></div>
+<div class="sidebarblock">
+<div class="content">
+<div class="title">Slide unimateLesson</div>
+<div class="paragraph"><p>_see devolUnimate slide. show me the device alone?</p></div>
+</div></div>
+<div class="paragraph"><p>UNIMATE worked well because it did one thing and one thing well - it handled large metal castsing and welded them to vehicle chassis. It didn&#8217;t polay chess or speak. It did an important job that relieved humans of dangerous work.</p></div>
+<div class="paragraph"><p>UNIMATE embodied a principle that became central to the Unix operating system 15 years later.</p></div>
+<div class="sidebarblock">
+<div class="content">
+<div class="title">slide McIlroyUnix</div>
+<div class="paragraph"><p>_ pic of Doug Mcilroy_</p></div>
+<div class="paragraph"><p>"Write programs that do one thing and do it well." - 1978</p></div>
+<div class="ulist"><ul>
+<li>
+<p>
+<a href="http://en.wikipedia.org/wiki/Unix_philosophy#McIlroy:_A_Quarter_Century_of_Unix">http://en.wikipedia.org/wiki/Unix_philosophy#McIlroy:_A_Quarter_Century_of_Unix</a>
+</p>
+</li>
+<li>
+<p>
+<a href="http://en.wikipedia.org/wiki/Douglas_McIlroy">http://en.wikipedia.org/wiki/Douglas_McIlroy</a>
+</p>
+</li>
+<li>
+<p>
+<a href="http://www.dartmouth.edu/~news/releases/2006/02/13.html">http://www.dartmouth.edu/~news/releases/2006/02/13.html</a>
+</p>
+</li>
+</ul></div>
+<div class="paragraph"><p>(use standard image &amp; quote slide layout you have in this deck)</p></div>
+</div></div>
+<div class="paragraph"><p>We need to create services that do one thing and do it well." We need to stop tyring to create crazy telephones.</p></div>
+<div class="sidebarblock">
+<div class="content">
+<div class="title">Slide phoneWithCrazyDial (repeat)</div>
+<div class="paragraph"><p><em>pic of phone dial with all sorts of letters and symbols added - it&#8217;s a mess.</em></p></div>
+</div></div>
+<div class="paragraph"><p>We need to stop releasing services "in pairs." and to do that, we need to pay attenion to the second-half of McIlroy&#8217;s 1978 quote:</p></div>
+<div class="sidebarblock">
+<div class="content">
+<div class="title">slide buildMcIlroyUnix</div>
+<div class="paragraph"><p>_ pic of Doug Mcilroy_</p></div>
+<div class="paragraph"><p>"Write programs that do one thing and do it well. Write programs to work together." - 1978</p></div>
+<div class="paragraph"><p>(use standard image &amp; quote slide layout you have in this deck)</p></div>
+</div></div>
+<div class="paragraph"><p>We need to stop trying to stuff more humans inside Mechancial Turks.</p></div>
+<div class="sidebarblock">
+<div class="content">
+<div class="title">slide moreHumansInTurks</div>
+<div class="paragraph"><p><em>get a pick/drawing of a Truk - one that has the doors open - and animate a handful of cartoony humans (stick figures? getting pushed into the doorway. They&#8217;re overflowing and easily won&#8217;t fit.</em></p></div>
+</div></div>
+<div class="paragraph"><p>Instead, we need to create services that work via automated switching.</p></div>
+<div class="sidebarblock">
+<div class="content">
+<div class="title">Slide automatedSwitch</div>
+<div class="paragraph"><p><em>build slide with the following:</em></p></div>
+<div class="paragraph"><p><em>Digital Switches</em></p></div>
+<div class="ulist"><ul>
+<li>
+<p>
+<a href="http://home.feierabend.com/lahnelster/bild72.jpg">http://home.feierabend.com/lahnelster/bild72.jpg</a>
+</p>
+</li>
+<li>
+<p>
+<a href="http://www.zuoda.net/search.aspx?q=alcatel++cem&amp;offset=500">http://www.zuoda.net/search.aspx?q=alcatel++cem&amp;offset=500</a>
+</p>
+</li>
+</ul></div>
+</div></div>
+<div class="paragraph"><p>We need to stop pretending every service is on an island.</p></div>
+<div class="sidebarblock">
+<div class="content">
+<div class="title">Slide serviceIslands</div>
+<div class="paragraph"><p><em>slide that shows lots of tiny tropical islands, each with a single Web service (twitter, facebook, google, etc.) icon on it.</em></p></div>
+</div></div>
+<div class="paragraph"><p>We need to start thinking and acting like we&#8217;re all in the same boat together.</p></div>
+<div class="sidebarblock">
+<div class="content">
+<div class="title">Slide serviceBoat</div>
+<div class="paragraph"><p><em>all the web services riding on a giant yatch or cruise ship (twitter, facebook, google, etc.) icon on it.</em></p></div>
+</div></div>
+<div class="paragraph"><p>We need to design and implement services that, from day one, inter-operate. We need to create modular, plug-able, composable services and enable client applications to use these components as they wish.</p></div>
+<div class="paragraph"><p>And again, I have to say that the hardware world is ahead of this again. A company called <em>PhoneBloks</em> has released a design idea where the smart phone is fully customizable via a set of inter-operating parts.</p></div>
+<div class="sidebarblock">
+<div class="content">
+<div class="title">Slide phoneBloks</div>
+<div class="ulist"><ul>
+<li>
+<p>
+<a href="http://thenextweb.com/gadgets/2013/09/11/phonebloks-lego-like-modular-smartphone-wants-to-make-disposable-devices-a-thing-of-the-past/">http://thenextweb.com/gadgets/2013/09/11/phonebloks-lego-like-modular-smartphone-wants-to-make-disposable-devices-a-thing-of-the-past/</a>
+</p>
+</li>
+<li>
+<p>
+<a href="http://cdn1.tnwcdn.com/wp-content/blogs.dir/1/files/2013/09/Phonebloks.png">http://cdn1.tnwcdn.com/wp-content/blogs.dir/1/files/2013/09/Phonebloks.png</a>
+</p>
+</li>
+</ul></div>
+</div></div>
+<div class="paragraph"><p>Users can assemble and re-arrange the parts to optimize the smart phone for their needs. Upgrade the camera, less storage for more battery life, etc. This is do-able today.</p></div>
+<div class="paragraph"><p>And we can do it, too. In fact, since we work in software (not hardware) we could do it faster, cheaper, sooner. If we commit to this vision of inter-operable services based on automated generic switching instead of custom-built APIs we can solve this problem in less than 20 years. We can all have Jetpacks!</p></div>
+<div class="sidebarblock">
+<div class="content">
+<div class="title">Slide jetPackRepeat</div>
+</div></div>
+<div class="paragraph"><p>We havde all the talent and skill right here in this room to make this happen. We just need to sieze the day and charge ahead. We have the opportunity to skip ahead in class,</p></div>
+<div class="sidebarblock">
+<div class="content">
+<div class="title">Slide classroomRepeat</div>
+</div></div>
+<div class="paragraph"><p>To avoid the mistakes of the future,</p></div>
+<div class="sidebarblock">
+<div class="content">
+<div class="title">Slide millerRepeat</div>
+</div></div>
+<div class="paragraph"><p>and to build a world where <em>(closing line needed here)</em></p></div>
+<div class="sidebarblock">
+<div class="content">
+<div class="title">Slide futureRepeat</div>
+</div></div>
+<div class="paragraph"><p>Thank you.</p></div>
+<div class="sidebarblock">
+<div class="content">
+<div class="title"><em><span class="red">Time: 30</span></em></div>
+</div></div>
+<div class="sidebarblock">
+<div class="content">
+<div class="title">Title Slide</div>
+<div class="paragraph"><p><em>same as starter slide</em></p></div>
+</div></div>
+</div>
+</div>
+</div>
+<div id="footnotes"><hr /></div>
+<div id="footer">
+<div id="footer-text">
+Last updated 2013-11-27 10:40:46 EST
+</div>
+</div>
+</body>
+</html>
