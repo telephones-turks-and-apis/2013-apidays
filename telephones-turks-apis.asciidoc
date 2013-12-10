@@ -1,0 +1,864 @@
+= Telephones, Mechanical Turks, and the Future of APIs =
+:Author: Mike Amundsen, Principal API Architect for Layer 7 / CA
+:Email: mca@amundsen.com
+
+.Title Slide
+****
+_Something that captures the topic. Maybe a telephone switchboard, mechanical turk, and something
+that represents the future of APIs, computer programming, etc._
+
+_Also include the following at the bottom of the slide:_
+
+Mike Amundsen, 
+
+Principal API Architect for CA / Layer 7
+
+@mamund
+****
+
+.[red]_#Time: 00#_
+****
+****
+
+I'd like to talk to you today about the Future of APIs - our future. 
+
+.Slide Future
+****
+_some futuristic image (maybe retro-future images like we'd see in the 1940s or 50s)_
+ 
+ * http://blog.stuttgarter-zeitung.de/wp-content/spaceport-of-the-future-1957.jpg
+ * http://blog.stuttgarter-zeitung.de/die-zukunft-von-gestern/2010/08/10/raumfahrt-im-abendrot/
+****
+
+Most people, many of them here today, are quite optimistic about the future of APIs. And, I must admit, 
+I, too, think we have an incredible opportunity before us; that the future offers amazing potential. 
+
+.Slide jetpack
+****
+_a flying jetpack!_
+
+ * http://mattsko.files.wordpress.com/2012/01/future501.jpg
+ * http://mattsko.wordpress.com/2012/01/23/
+****
+ 
+Who knows, maybe I'll finally get that jetpack that I was promised as a young member of the "Rocket Age!"
+
+However, my optimism is tempered by frustration and disappointment. Why? 
+
+.Slide dystopia
+****
+_Fritz Lang's Metropolis?_
+****
+
+Because I am concerned that some of us
+are ignoring not just the lessons of the past, but also the likely mistakes of the future. I'm worried that 
+we're missing opportunities before us _today_ that will help us mold and shape our shared tomorrows. 
+
+.Slide techGifts
+****
+_not sure here. lots of inventions from the 20th century? (light bulb, telegraph, telephone, automobile, refrigerator, air conditioning, mainframe computer, satellite phone, PC/Mac, gameboy/cube, TV remote, tablet computer, etc.)_
+
+animate w/o clicks.
+****
+
+I think we are too focused on the here-and-now and that we are too willing to lower our gaze from the far horizon and to look
+instead at the gifts around our feet. Forgetting that the technological gifts we have today are here due to the forward-thinking, risk-taking, and experimentation of those who came before us. 
+
+.Slide giants
+****
+_include names w/ each portait:
+(Charles Babbage, Lady Lovelace, Samuel Morse, George Boole, Alexander Graham Bell, Alan Turing, Claude Shannon, Vanneavar Bush, Douglas Engelbart, Ted Nelson, Tim Berners-Lee, Roy T. Fielding)_
+
+animate w/o clicks.
+****
+
+I fear that we sometines forget that we are not actually as tall as we think we are. That, in fact, our expansive view is the result of our standing on the shoulders of the giants who came before us.
+
+In short, I think we're squandering our future.
+
+.Slide squander
+****
+_some image of abandoned town, etc._
+
+ * http://www.gotoast.ca/blog/wp-content/uploads/2008/10/22-san-zhi-abandoned-village1.jpg
+ * http://forum.nationstates.net/viewtopic.php?f=23&t=237475
+****
+
+So I want to talk about that future. Now.
+
+.Slide futureNow
+****
+_some whimsical image of the future (again, from the 1950s POV)_
+
+ * http://peterlarson.org/wp-content/uploads/3949834600_0a7487f402_b1.jpg
+ * http://peterlarson.org/blue-futures/
+****
+
+In hopes of encouraging us to look up, look ahead, and start to create that future today. And, in order to do that, 
+I want to reach back into the past. Because I think the past can inform us, remind us, and help us to craft a better tomorrow. 
+
+There's a well-known quote on this topic.
+
+.Slide santayana
+****
+"Those who cannot remember the past are condemned to repeat it." - George Santayana, Life of Reason Vol. 1, 1905
+
+_Include a picture of Santayana._
+****
+
+Santayana penned this quote as part of his five volume "Life of Reason" series which he wrote during his tenure
+at Harvard University. Among his students were  T. S. Eliot, Robert Frost, Gertrude Stein, and W. E. B. Du Bois.
+
+.Slide santayana
+****
+"Those who cannot remember the past are condemned to repeat it." - George Santayana, Life of Reason Vol. 1, 1905
+
+_Add pictures of Eliot, Frost, Stein, and Du Bois to the slide; on pic per click._
+****
+
+This quote also appears at site of the Auschwitz Concentration Camp from WW II. It's a powerful perspective
+on the past. 
+
+But I'm here to talk about the future. And it's why I prefer this quote instead:
+
+.Slide miller
+****
+"Those who ignore the mistakes of the future are bound to make them." - Joseph D. Miller, 2006.
+
+_Include picture of Miller. (ex. https://lifeboat.com/ex/bios.joseph.d.miller)_
+****
+
+Think about that for a moment. What mistakes are the future are we ignoring? This is the question I put
+to you today. This is the challenge. Because when we can recognize future mistakes, we can avoid them.
+We can, as it were, "jump ahead" or "advance an extra grade" in the school of life.
+
+.Slide school
+****
+_Something that invokes school, classroom, or skipping a grade, advancing along a path, etc._
+****
+
+So, here we are the dawn of a new century. One with all sorts of new technological and social challenges ahead of us. And I'd like to encourage all of us to make Miller's warning out watchword. It's my hope that it is his challenge that will shape the generations of creative thinkers, inventors, and entrprenouers of the 21st century.
+
+.[red]_#Time: 05#_
+****
+****
+
+.Chapter TimeIsCloseAtHand
+****
+Part 1 : The time is close at hand
+****
+
+Ok, let's start our journey on the road to recognizing future mistakes. And let's do it by, oddly enough,
+looking back into the past. Back more than 100 years ago - to the late 1800s - when the world was undergoing an incredible
+transformation. 
+
+.Slide bellAndTelephone
+****
+_Picture of A. G. Bell. and a click animation that reveals an early model telephone._
+****
+
+near the close of the last century was Alexander Graham Bell's telephone was transforming the world. While there were a number of other people working on similar projects, it is Bell that the history books remember and credit with most of the success.  At first the telephone seen as a marvel, but only a novelty of teh age.
+
+.slide presidentHayes
+****
+_picture of President Rutherford B Hayes with quote:_
+
+"That’s an amazing invention, but who would ever want to use one of them?" - R.B. Hayes, 1876.
+****
+
+At first, it's utility was thought to be limited to a small segment of society; government officials and the rich. 
+
+However, in relatively short order,  the telephone quickly became a powerful tool in the arsenal of newspaper reporters who saw it's potential to change the speed of information around the globe. Instead of threatening the future of print media, the telephone was seen as a way to improve the quality and accuracy of information in the newspaper. Technically this started with the advent of the telegraph some thirty years before, but the intamcy and immediacy of the telephone greatly sped up the process.
+
+.Slide PhoneUsers
+****
+_old time newspaper reporter talking on an old time phone._
+****
+
+It took some time, but soon another population found the telephone invaluable: business. Telephones expanded the reach of markets, decreased the need for expensive travel, and increased the speed at which information flowed (including information used to buy and sell perishable goods).
+
+.Slide PhoneUsers
+****
+_add pic of a business man on an old-time phone._
+****
+
+And eventually, individuals started installing telephones in their own homes. Telephones made it possible for families to begin to move farther apart and still seem close, increased opportunities for social connection, and spreading information throughout local communities.
+
+.Slide PhoneUsers
+****
+_add pic of a woman in a domestic setting on an old-time phone._
+****
+
+The telephone had arrived. In fact, early figures show that telephone adoption rates were incredible. Installs went from 50k in 1900 to almost 6M in 1910. Ten years!
+
+.Slide addingPhones
+****
+_shot of the Telephone Adoption Rate graph from gDocs_
+****
+
+And with this explosion of communications came an entirely new concept: The Communication Network.
+
+.Slide PhoneUsers
+****
+_connect all the images from the previous slides to a central switch. this is the network._ 
+
+*replace grey box with switchboard*
+
+ * http://www.corp.att.com/history/images/switchboard_switching.jpg
+ * http://www.corp.att.com/history/nethistory/switching.html
+ 
+****
+
+The idea of a "network" was not entirely new. In the early 1800s we built the _Train Network_. In the mid-1800s we created the _Telegraph Network_. But the _Telephone Network_ of the early 20th century was orders of magnitude more distruptive and influential.
+
+.Slide networks
+****
+_build slide w/ an old-time locomotive, then a telegraph, then a telephone_
+
+build per click
+****
+
+Telephones offered the promise of "instant communication" and invoked in people's imagination a network that was, for all intents and purposes _alive_.
+
+.Slide nervousSystem
+****
+"The time is close at hand when the scattered members of civilized communities will be as closely united, so far as instant communication is concerned, as the various members of the body now are by the nervous system." - Scientific American, 1880
+
+_Include old copy of SA Mag?_
+
+*make the SciAmer reference appear on a click*
+**** 
+
+This nervous system - this network of telephones - represented a major technological advance. But it also represented
+a problem; one that occurred many times through the history of innovation. All the advancement, all this achievement
+depended not on sleek machinery, but on overworked humans.
+
+.Slide SwitchboardRoom
+****
+_Photo of early switchboard room for telephones. lots of panels, many operators (women, i assume)._
+**** 
+
+Brief side note: The first telephone operators where young boys, not women. These boys had come from the ranks of
+telegraph offices but, it turned out they were seen as unreliable and troublesome.
+
+In fact, it was in my home city of Cincinnati, OH that W. H. Eckert the head of the local telephone company fired 
+all the boys and hired over sixty women to staff the switchboards.
+
+.Slide Eckert
+****
+"Young ladies are very much superior to boys They are steadier, do not drink beer, and are always on hand." - W. H. Eckert, 1881
+
+_photo of eckert?_
+**** 
+
+So, it turns out that the marvel of the age was powered by humans dashing about plugging lines together by hand. 
+Each connection between two parties required human intervention. This reliance on humans was just assumed in the beginning. In fact, it was considered an essential feature of the network; a kind of safety valve. A governor on machines.
+
+This was so much a part of the thinking on how machine worked that even in the early 1950s and 60s, as computer networks began to develop, this dependence on humans was considered so important as to be acknolwedged in the very _name_ of these early systems.
+
+.Slide buildSAGEandSABRE
+****
+_(pics of SAGE and SABRE systems)_
+
+ * http://plyojump.com/classes/images/computer_history/sage_1954.jpg
+ * http://plyojump.com/classes/mainframe_era.php
+ 
+ * http://www-03.ibm.com/ibm/history/ibm100/images/icp/T482097A41782S76/us__en_us__ibm100__sage__sabre_reservation_1960__620x350.jpg
+ * http://www-03.ibm.com/ibm/history/ibm100/us/en/icons/sabre/
+
+build each image on click
+
+****
+
+The first network of military RADAR computers was created in the 1950s and was known as the SAGE Network. SAGE stood for _Semi-Automatic Ground Environment_.
+
+In the early 1960s, the first widely deployed computer network for business was The _Semi-Automatic Business Research Environment._ You might recognize it by the word _SABRE_.
+
+Why was it so important in the early days to label them "_Semi_-Automatic"? And what was it about this historic dependence networks have on human intervention that is important for us to consider when we think about the future of APIs? 
+
+.[red]_#Time: 15#_
+****
+****
+
+.Chapter GhostsInTheMachine
+****
+Part 2 : The ghost in the machine
+****
+
+To continue, I need to tell you the other story I wanted to be sure to cover today. This one reaches back even farther into the past. All the way back to the last half of the 18th Century - 1770 to be more exact. Near the end of the Age of Enlightenment. To the House of Hapsburg in Austria and the court of Maria Theresa. 
+
+.Slide MariaTheresa
+****
+_photo of Maria Theresa (ex. http://en.wikipedia.org/wiki/Maria_Theresa_of_Austria)._
+****
+Due to a series of military and family cirsumatancdes, Maria Theresa was Austria's monarch at a time when it was deemed unacceptable for women to rule. Technically, she shared the throne w/ her husband Francis the I and, after this death in 1765, with her son until her death in 1780. But, in truth, it was Maria Theresa who was the power behind the House of Hapsburg for close to 40 years. 
+
+By the way, you may not recognize the name of Maria Theresa of Austria, but I bet you would recognise her youngest daughter named Maria Antonia. After she married her French suitor, she changed her name to Marie-Antoinette. Now, Marie-Antoinette is famous for several things. 
+
+.Slide LetThemEatCake
+****
+_fancy cake (something that might have come from the late 1800s? would be cool if the lettering actually said "Let them eat cake".[e.g. http://allinthenameofnoms.files.wordpress.com/2011/05/let-them-eat-cake-7.jpg])_
+****
+
+One of the more famous is the attribution of the meme "Let them eat cake." although it turns out unlikely she
+ever actually said that, the meme has stuck over the centuries.
+
+.Slide SchönbrunnPalace
+****
+_pic of the Schönbrunn Palace_
+
+ * http://en.wikipedia.org/wiki/Sch%C3%B6nbrunn_Palace
+****
+
+Anyway, Marie Theresa entertained many skilled inventors and illusionists in her court at Schönbrunn Palace. At one of these events a rather prodigous inventor, Wolfgang von Kempelen, was in attendance. As he watched a magician name Francois Pelletier perform his tricks (most of which involved the use of magnets), he was somewhat appalled at the guillibility of those in the audience and he quickly and easily debunked Pelletier's tricks. 
+
+.Slide magicMagnets
+****
+_some image that makes magic w/ magnet seem childish_
+
+ * http://www.klutz.com/common/images/products/main/magneticmagic.jpg
+****
+
+This amateurish display prompted him to announce to her Highness and all in attendance that, in no more than six months time, he would return with a truely remarkable illusion. One that would baffle anyone who attempted to explain it. His illusion, he claimed, would be truely magical.
+
+.Slide vonKempelen
+****
+ * http://en.wikipedia.org/wiki/Wolfgang_von_Kempelen
+****
+
+Now, Von Kempelen had a reputation as a skilled thinker, engineer, and inventor. He spoke several languages, designed bridges, bulidings, steam-engines, even an early form of a typewriter. His boast was not taken lightly and all waited for his return six months hence to see what he would come up with.
+
+.Slide theTurk
+****
+_suggest using the drawing/plate for this slide. something that does not look "real" (like the pic)_
+
+ * http://en.wikipedia.org/wiki/The_Turk
+****
+
+What he brought with him upon his return was a huge contraption he called the "Chess-Playing Automaton." He told her Majesty that it was a machine that would play chess and always win. It was an incredibly elaborate and ornate with a life-sized maniquine dressed in Turkish garb, holding a long smoking pipe in one hand and manipulating a full-zsized chessboard with the other. 
+
+.Slide theTurk
+****
+_now use a pic of one of the replicas_
+
+ * http://en.wikipedia.org/wiki/The_Turk
+****
+
+All this rested atop a large cabinet filled with gears, cables, levers, and other machinery. There were three compartments, each opening up to reveal part of the apparatus.
+
+.Slide hapsburgsAndOttoman
+****
+_a few pics that show the wars through the ages_ 
+
+ * http://en.wikipedia.org/wiki/Ottoman%E2%80%93Habsburg_wars
+ 
+automation (w/o clicks) works here
+****
+
+It should be noted that the use of Turksih garb for the manequine was a cheeky move. Von Kempelen was well-aware that the Hapsburgs had a long history of war with the Ottoman Empire and that Austrians continued to despise the Turks as a people. Von Kempeleon was a master showman.
+
+All accounts of the event at Schönbrunn Palace indicate Von Kempelen's illusion was a hit. The machine won every chess match it played with anyone who wished to challenge it - usually within 30 minutes. Those in attendance were astonished and her Highness was most impressed. After this single performance, Von Kempelen dismantled the machine and put it into storage, resisting requests for additional appearances of this "Mechanical Turk" as it was then called.
+
+However, in 1781 - ten years after he unvieled his illusion, Maria Theresa's eldest son, Emperor Joseph II, ordered Von Kempelen to re-assemble the Turk and, after a special performance in Vienna, to embark on a tour of Europe.
+ 
+.Slide buildTurkTour1
+****
+_pics of euro-trash who played the Turk (include France/England/Germany images?)_
+
+ * http://en.wikipedia.org/wiki/Paul_I_of_Russia
+ * http://en.wikipedia.org/wiki/La_Tour_d%27Auvergne#Later_history:_Dukes_of_Bouillon_and_Albret
+ * http://en.wikipedia.org/wiki/Benjamin_Franklin
+ 
+make it a build-slide (per click) maybe include city names in text as part of the build? (Paris, London, Leipzig, Dresden, Amsterdam)
+****
+
+His tour took him to Paris, where - along with a number of well-know chess masters - the machine was pitted against the Grand Duke of Russia, The Duke of Bouillon, even Benjamin Franklin played a round while Franklin was in Paris as US Ambassador to France. From Paris, the machine went on to London, Liepzig, Dresden, and Amsterdam. Eventually, Von Kempelen was able to return home after more than ten years of touring. He, again, placed the machine into storage and there it stayed until his death in 1804.
+
+.Slide whatIsIt
+****
+_something that indicates the mystery of the machine. a single image? several?_
+****
+Throughout the thirty years of the machine's display no-one could figure out how it worked. At every opportunity "experts" were invited to attend and inspect the device during performances. Von Kempelen invited them to bring magnets, lodestones, any other items they wished in order to test his machine. On one occasion a "spiritualist" came to view the machine and aftger only a few minutes she left the room in horror saying that it was a vessel for ghosts and demons.
+
+.slide turkReveal
+****
+_image showing how the turk works_
+
+ * http://farm3.static.flickr.com/2035/2129297744_f3589d8e86.jpg
+ * http://bibliodyssey.blogspot.com/2007/12/turk-chess-automaton-hoax.html
+ 
+****
+
+As we now know, the Turk was operated by a chess-playing human hidden inside the cabinet. Von Kempelen used common misdirection in the construction of the box to make it appear it was full of gears when, in fact, the gears where only a thin facade that hid the open compartment with a small chair, a viewport, and levers with which to operate the manequin.
+
+The "ghost in the machine" was a human all along. And the ghost would continue to haunt the machine.
+
+.Slide buildTurkTour1
+****
+_pics of more peeps who played the Turk (include France/England/Germany images?)_
+
+ * http://en.wikipedia.org/wiki/Napoleon_I_of_France
+ * http://en.wikipedia.org/wiki/Catherine_the_Great 
+ 
+make it a build-slide (per click) 
+
+city names: Paris, Milan, London, New York, Boston, Philadelphia, Wash DC, Havana)
+****
+
+After Von Kempelen's death, an enhanced version of the machine - one that included the ability to yell our "Check" whenever the machine had cornered the opponent's King - continued traveling, with various owners, for the another 50 years. Along the way it spent a great deal of time in the United States and attracted the attention of Edgar Allen Poe, who published an article about the device in 1836. 
+
+.Slide poeAndTurk
+****
+ * http://en.wikipedia.org/wiki/Edgar_Allan_Poe
+ * http://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/Southern_lit_mess_1837_feb_pym.jpg/220px-Southern_lit_mess_1837_feb_pym.jpg
+ 
+proly need a better image of the "Southern Literary Messenger" possibly april 1936 w/ "Maizel's Chess Player" article shown
+****
+
+By the mid-1800s several aticles and even books about the Mechanical Turk were published. There was one that focused, not just on the machine, but on it's inventor Von Kempelen. And one of his more interesting inventions was a "speaking machine." A device Von Kempelen completed not long before his death in 1804.
+
+.Slide speakingMachine
+****
+ * http://en.wikipedia.org/wiki/Wolfgang_von_Kempelen%27s_Speaking_Machine
+ * http://en.wikipedia.org/wiki/Wolfgang_von_Kempelen
+ 
+_(pic of the machine, possibly more than one, and Von Kempelen)_
+
+****
+
+This machine had a keyboard in which produced audible speech through a series of  bellows. While crude in 1804, a greatly improved version was reconstructed by Sir Charles Wheatstone in 1837. Wheatstone was another prodigious inventor. He perfected the English concertina, an early form of the microphone, and was even involved in the creation of telegraph machines in the mid 1800s.
+
+
+.Slide wheatstoneAndBell
+****
+ * http://en.wikipedia.org/wiki/Sir_Charles_Wheatstone
+ 
+ 
+_include pics of the concertina & his telegraph (click animation)_
+
+****
+
+It so happens that one of the people avidly following Wheatstone's work and writings was a young inventor by the name of Alexander Graham Bell. 
+
+And that brings us back to where we began...
+
+.[red]_#Time: 25#_
+****
+****
+
+.Chapter Slide IgnoringFuture
+****
+Part 3 : Ignoring the ghosts of the future
+****
+
+.Slide AGBell
+****
+_pic of Alexander Graham Bell_
+****
+
+One of the things Alexander Graham Bell insisted upon when he created his telephone is that the devices NOT be sold in pairs.
+This was a problem for a number of his early backers. It made no sense to them to sell a customer a _single_ telephone. They
+thought "No one will buy a single telephone. They won't have anyone to talk with!" Of course, this turned out to be another
+stroke of genius from Bell. If they were sold in pairs, each time a customer wanted to call someone else, they'd need another
+telephone!
+
+.Slide lotsOfPhones
+****
+_pic of phone after phone that eventually fills the screen_
+****
+
+Now, to us, having a telephone on your desk at work for every person you want to call seems silly, right? But, in fact, this "selling in pairs" is the exact model we use for Web Services. 
+
+.Slide lotsOfServices
+****
+_pic of twitter icon + API page, Facebook + API page, (more needed) until the screen is filled up_
+****
+
+Each time we create a service (publisher), we create an API (consumer) and each time we want someone to use our service, we
+get them to add another `'telephone' to thier desktop. Pretty soon our desktop looks like this:
+
+.Slide phonesOnDesk
+****
+PC/Mac with lots of telephones, each w/ a WebService icon (twitter, etc.)_
+****
+
+Well, actually, our desktop looks like this, right?
+
+.Slide iphoneHomeScreen
+****
+_pic of iPhone home screen w/ lots of icons_
+****
+
+And _that_ is a problem we need to fix.
+
+It's important to remember that we solved this problem for _documents_ back in the late 90s.
+
+.Slide mosaicBrowser
+****
+_pic of early browser (might need a better image than this)_
+
+ * http://www.wired.com/images_blogs/thisdayintech/2010/04/mos-10.jpg
+ * http://www.wired.com/thisdayintech/2010/04/0422mosaic-web-browser/
+****
+
+And we _have_ improved that one receiver over the last fifteen years...
+
+.Slide lotsOfBrowsers
+****
+_build slide of many browsers/brands over the years_
+****
+
+But that's old news. We're not in the 'Age of documents' anymore and this receiver is coming up short. We need a new one
+that works in the same general way with _all_ the services out there, not just one, and not just the ones we know about
+today. It needs to work with services that haven't even been invented yet.
+
+.Slide notSure??
+****
+_pic of some client? lots of services? maybe a mystery client and has all the services connected?_ 
+****
+
+But we don't have this yet. Instead, every time we want to add a new service, we need humans to build us a dedicated client
+app and we need to install that app. In fact, it's worse than that. Once we install the dedicated app, we have to keep installing
+it over and over again. Each time a new feature is added to the service we need a new version app. It's as if we had a telephone
+on our desk at work and then, when a new feature was added, we needed to update the phone dial.
+
+.Slide phoneWithNewDial
+****
+_pic of classic telephone with 12 buttons, then add a new button ('A'?) to show adding a new feature to the service_
+****
+
+Do this enough times and the phone gets to be really hard to deal with.
+
+.Slide phoneWithCrazyDial
+****
+_pic of phone dial with all sorts of letters and symbols added - it's a mess._
+****
+
+But we do that all the time today, right? We keep installing the same app multiple times - whenever the service tells us to - all in hopes that finally it will have all the features we need. 
+
+.Slide installPhoneApps
+****
+_pic showing the install process. hopefully an ugly example ;)_
+****
+
+Because, right now we need human intervention to make all this API stuff work. The API Economy is a gigantic Mechanical Turk.
+
+.Slide updatedTurk
+****
+_edit this pic?
+
+ * http://4.bp.blogspot.com/-YGavyHPmUEM/UZE2AK7tXOI/AAAAAAAAKEk/bO8LK37c0aY/s1600/turk2.jpg
+ * http://bobcanada92.blogspot.com/2013/05/doctor-who-season-7-episode-12.html
+
+****
+
+Think about it. Each time someone wants to set up a new "conversation" between a service and a client app, they need to get an "operator" to make the connection for them.
+
+.Slide apiOperators
+****
+_two pics: one of switchboard operators (use the one from earlier?) next to one of a room full of programmers in cubicles_
+
+ * http://gurovich.com/site/wp-content/uploads/2011/07/tron-28-office-cubicles.jpg
+ * http://gurovich.com/site/2011/07/19/the-dinosaur-feed-pen/
+ 
+****
+
+
+And each time the service changes that means we need to start a new "conversation" and we need to do it all over again. This
+is crazy and it has to stop.
+
+.Slide IndistinguishableFromMagic
+****
+_(include his pic?)_
+
+_"Any sufficiently advanced technology is indistinguishable from magic." - Arthur C. Clarke (1917 - 2008)_
+****
+
+One of the things we learned from Von Kempelen and his chess-playing Turk illusion is that people love the mystery. They want to believe in the magic. 
+And we certainly have lots of "magic" around us.
+
+.Slide buildMagic
+****
+_build slide of all the cool "magic" of the 21st century (cell phone, google glass, retina scan security, driverless car, micro robots, etc.)_
+****
+
+But it's important that we not get caught up in the illusion. That we remember that, for now at least, quite a bit of our API Economy remains dependent on the direct laobr of thousands of unseen individuals; people "underneath the tabletop" working the levers for us in order that we can enjoy the magic.
+
+.Slide buildWorkers
+****
+_build slide of all the human workers at Chinese iPhone factories, programmers in a room, others?)_
+****
+
+These are the "ghosts in the machine" - the labor that makes it all possible. And there are limits to this illusion. Like Von Kempelen's Turk, we are, sooner or later, bound to be shown up for the charlatan's that we are. If we want to move the API Economy to a point where it is truely scalable and sustainable, we must rid ourselves of this belief in ghosts and magic. 
+
+The telephone network was able to achieve this. As early as 1920, Panel Switches began to appear. They were mechanical; they threw
+latches to complete connections.
+
+.Slide switchBuild
+****
+_build slide with the following:_
+
+_Panel Switch_ 
+
+ * http://upload.wikimedia.org/wikipedia/commons/0/09/Panel_switch_district_selector_frame.jpg
+ * http://en.wikipedia.org/wiki/Panel_switch
+ 
+****
+
+In the early 1960s electronic switches appeared using wire relays to complete the connections.
+
+.Slide switchBuild
+****
+_build slide with the following:_
+
+_Electronic Switches_ 
+
+ * http://www.centralofficeonline.com/Summerside.jpg
+ * http://www.centralofficeonline.com/step.html
+ 
+****
+
+And it was in the 1970s that we start to see fully digital switching gear for telephone connections.
+
+.Slide switchBuild
+****
+_build slide with the following:_
+
+_Digital Switches_ 
+
+ * http://home.feierabend.com/lahnelster/bild72.jpg
+ * http://www.zuoda.net/search.aspx?q=alcatel++cem&offset=500
+ 
+****
+
+Now, that's close to 100 years between the invention of the phone and fully digital switching. But it's less than fifty years
+after the telephone is invented before the first automated switches are widespread. That's just over two generations.
+
+For another example, the first Robotic Arm was patented in 1954 by Devol and Engleberger. Within five years this robot (called the UNIMATE) was installed at a General Motors assembly plant in New Jersey.
+
+.Slide devolUnimate
+****
+_pic of Devol and Englerberger? and then the UNIMATE (make it a build slide?)_
+
+ * http://www.blogcdn.com/www.engadget.com/media/2011/08/8-16-2011devol1-obit.jpg (pretty sure this is both of them)
+ * http://www.engadget.com/2011/08/16/george-devol-creator-of-the-first-industrial-robot-arm-dies-at/
+
+ * http://www.wfs.org/Upload/pictures/futuristmj2013_unimate.jpg?1364864571
+ * http://www.wfs.org/futurist/2013-issues-futurist/may-june-2013-vol-47-no-3/robots-work-toward-smarter-factory
+****
+
+Ford's first moving assembly line appeared in 1913.
+
+.slide fordAssemblyLine
+****
+_this is an OK pic. might be better out there?_
+
+ * http://cliojournal.wikispaces.com/file/view/ford-model-a-assembly-line.jpg/224235130/ford-model-a-assembly-line.jpg
+ * http://cliojournal.wikispaces.com/1920+Motor+car
+ 
+****
+
+Again, that's about two generations between the the Turk-style work and automation. Two generations.
+
+.slide robotCarFactory
+****
+ * http://thebreakthrough.org/images/main_image/robot_arms_at_car_factory.jpg
+ * http://thebreakthrough.org/index.php/programs/economic-growth/P21
+****
+
+Now let's look at our world - the World Wide Web.
+
+.slide wwwAndCERN
+****
+_pic of tim BL (and maybe the first WWW computer) proly standard quote layout here_
+
+ * http://home.web.cern.ch/about/birth-web
+ * http://home.web.cern.ch/sites/home.web.cern.ch/files/styles/medium/public/image/about_section_page/2013/01/bernerslee.jpg?itok=_ycR_q-1
+ * http://www.w3.org/History/1989/Image1.gif
+ * http://www.w3.org/History/1989/proposal.html
+
+include this quote: "A web of nodes in which the user can browse at will" 
+****
+
+in 1993 The Organization for Nuclear Research (also known as CERN) announced that the World Wide Web - as designed by Tim Berners-Lee - was free for all to use. Twenty years ago this year. That's one generation - in human terms. 
+
+But there are some who think that a "generation" should be computed differently in this digital age. Estimates of the "generation rate" of the Internet to be between five and seven years. IOW, one "human" year is equal to five "Internet year." At that rate, we're now wrapping up our fourth generation. Four generations and we're still dependent on the same assembly lines, manual labor, and switchboard operators we relied upon at the very start. That's a bummer.
+
+.Slide mooresLaw
+****
+_not sure what to do here. Would like some image/graphic that speaks to this "Internet Years" v. "Human Years" idea._
+****
+
+But maybe the estimates don't mean much here. Maybe we should stick to using the same measure as all the others. In that case, we're only one more generation away from truly automating the Web and scaling the API Economy past the limits of human labor. Does that sound right? Do we need to wait another twenty years before we break free of manually editing each API every time it changes?
+
+.Slide 20yrsFromNow
+****
+_something that shows the passage of time, maybe a stack of calendars with 2033 on the top with a date circled and the note "Automate the Web today" like a to-do item_
+
+****
+
+I hope not. I'd hate to think of the kind of world where we have tens of thousands mechanical turks operating behind the scenes all over the world propping up our API Economy. What would that be like? 
+
+.Slide HgWellsFuture
+****
+_pic of eloi meeting center?_
+
+ * http://www.idyllopuspress.com/meanwhile/images2/tm_eloisphinxes.jpg
+ * http://www.idyllopuspress.com/meanwhile/6310/george-pals-time-machine/
+****
+
+The author H.G. Wells had a pretty strong opinion of what our future would look like if we forced not just the 
+ghosts, but the machines themselves into an underground paraellel existence.
+
+.Slide HgWellsFuture
+****
+_add Morlock & Eloi pics_
+
+ * http://3.bp.blogspot.com/-rkMjEKpNKA4/TgJFl2L8VLI/AAAAAAAAAYk/_wag2q6xOF4/s1600/morlocks.jpg
+ * http://twocrabapples.blogspot.com/2012/04/savior-who-descends-gospel-and-time.html
+ * http://www.offscreen.com/images/Eloi.jpg
+ * http://www.offscreen.com/index.php/pages/essays/vertical_topography/
+****
+
+As stark as his vision was, it showed a clear understanding of the possible dangers of ignoring the ghosts in the 
+machine. While I don't think we're heading for this kind of dystopia, I do think some of us continue ignore the humans that power our lives today. And I worry that we're not always doing as much as we can to elminate the ghosts.
+
+So what can we do? What tangible work is before us that allows us to pay heed both Santayana and Miller?
+
+.Slide SantayanaAndMiller
+****
+_a build slide (per click) of Santayana & Quote (see above) and Miller and quote (see above)_
+****
+
+First, we need to internalize the lessons from UNIMATE.
+
+.Slide unimateLesson
+****
+_see devolUnimate slide. show me the device alone?
+****
+
+UNIMATE worked well because it did one thing and one thing well - it handled large metal castsing and welded them to vehicle chassis. It didn't polay chess or speak. It did an important job that relieved humans of dangerous work. 
+
+UNIMATE embodied a principle that became central to the Unix operating system 15 years later.
+
+.slide McIlroyUnix
+****
+_ pic of Doug Mcilroy_
+
+"Write programs that do one thing and do it well." - 1978
+
+ * http://en.wikipedia.org/wiki/Unix_philosophy#McIlroy:_A_Quarter_Century_of_Unix
+ * http://en.wikipedia.org/wiki/Douglas_McIlroy
+ * http://www.dartmouth.edu/~news/releases/2006/02/13.html
+  
+(use standard image & quote slide layout you have in this deck)
+****
+
+We need to create services that do one thing and do it well." We need to stop tyring to create crazy telephones.
+
+.Slide phoneWithCrazyDial (repeat)
+****
+_pic of phone dial with all sorts of letters and symbols added - it's a mess._
+****
+
+We need to stop releasing services "in pairs." and to do that, we need to pay attenion to the second-half of McIlroy's 1978 quote:
+
+.slide buildMcIlroyUnix
+****
+_ pic of Doug Mcilroy_
+
+"Write programs that do one thing and do it well. Write programs to work together." - 1978
+
+(use standard image & quote slide layout you have in this deck)
+****
+
+We need to stop trying to stuff more humans inside Mechancial Turks.
+
+.slide moreHumansInTurks
+****
+
+_get a pick/drawing of a Truk - one that has the doors open - and animate a handful of cartoony humans (stick figures? getting pushed into the doorway. They're overflowing and easily won't fit._
+****
+
+Instead, we need to create services that work via automated switching.
+
+.Slide automatedSwitch
+****
+_build slide with the following:_
+
+_Digital Switches_ 
+
+ * http://home.feierabend.com/lahnelster/bild72.jpg
+ * http://www.zuoda.net/search.aspx?q=alcatel++cem&offset=500
+ 
+****
+
+We need to stop pretending every service is on an island.
+
+.Slide serviceIslands
+****
+_slide that shows lots of tiny tropical islands, each with a single Web service (twitter, facebook, google, etc.) icon on it._
+****
+
+We need to start thinking and acting like we're all in the same boat together. 
+
+.Slide serviceBoat
+****
+_all the web services riding on a giant yatch or cruise ship (twitter, facebook, google, etc.) icon on it._
+****
+
+We need to design and implement services that, from day one, inter-operate. We need to create modular, plug-able, composable services and enable client applications to use these components as they wish.
+
+And again, I have to say that the hardware world is ahead of this again. A company called _PhoneBloks_ has released a design idea where the smart phone is fully customizable via a set of inter-operating parts.
+
+.Slide phoneBloks
+****
+ * http://thenextweb.com/gadgets/2013/09/11/phonebloks-lego-like-modular-smartphone-wants-to-make-disposable-devices-a-thing-of-the-past/
+ * http://cdn1.tnwcdn.com/wp-content/blogs.dir/1/files/2013/09/Phonebloks.png
+****
+
+Users can assemble and re-arrange the parts to optimize the smart phone for their needs. Upgrade the camera, less storage for more battery life, etc. This is do-able today. 
+
+And we can do it, too. In fact, since we work in software (not hardware) we could do it faster, cheaper, sooner. If we commit to this vision of inter-operable services based on automated generic switching instead of custom-built APIs we can solve this problem in less than 20 years. We can all have Jetpacks!
+
+.Slide jetPackRepeat
+****
+****
+
+We havde all the talent and skill right here in this room to make this happen. We just need to sieze the day and charge ahead. We have the opportunity to skip ahead in class,
+
+.Slide classroomRepeat
+****
+****
+
+To avoid the mistakes of the future, 
+
+.Slide millerRepeat
+****
+****
+
+and to build a world where _(closing line needed here)_
+
+.Slide futureRepeat
+****
+****
+
+Thank you.
+
+.[red]_#Time: 30#_
+****
+****
+
+.Title Slide
+****
+_same as starter slide_
+****
+
+
+
+
+
+
+
+
+
